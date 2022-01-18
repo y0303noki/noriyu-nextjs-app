@@ -21,9 +21,12 @@ const Layout = ({ children, home }: { children: any; home: any }) => {
                 width={144}
                 alt={name}
               />
+              <div className=''>
+                {name}
+                <div>ここに自己紹介を書く</div>
+                <div>ここにSNSのアカウントを並べる</div>
+              </div>
             </div>
-
-            <h1 className='text-center'>{name}</h1>
           </>
         ) : (
           <>

@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/layout';
+import MyApp from '../components/MyApp/myApp';
 
 const Home: NextPage = () => {
   return (
@@ -18,14 +19,37 @@ const Home: NextPage = () => {
           <h1 className='text-red-500'>
             Welcome to <a href='https://nextjs.org'>Next.js!</a>
           </h1>
-          <Link href='/about'>
-            <a className=''>about</a>
-          </Link>
+          <div>
+            <Link href='/about'>
+              <a className=''>about</a>
+            </Link>
+          </div>
 
           <p className='my-16 text-2xl'>
             Get started by editing{' '}
             <code className='bg-gray-300 rounded-2xl p-3 text-xl font-mono	'>pages/index.tsx</code>
           </p>
+          {/* コンテンツ */}
+          <div className=''>
+            {/* 自分のアプリ一覧 */}
+            <div className='m-8'>
+              <h1 className='text-3xl font-bold'>My App</h1>
+
+              <MyApp></MyApp>
+            </div>
+            {/* 自分の記事一覧 */}
+            <div className='m-8'>
+              <h1 className='text-3xl'>Article</h1>
+            </div>
+            {/* 自分のブログ一覧 */}
+            <div>
+              <h1>Blog</h1>
+            </div>
+            {/* なんか適当に画像 */}
+            <div>
+              <h1>Image</h1>
+            </div>
+          </div>
 
           <div className='flex items-center justify-center flex-wrap max-w-screen-md'>
             <a
