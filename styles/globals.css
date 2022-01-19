@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.min-h-24 {
+  min-height: 6rem;
+}
+
+.min-w-24 {
+  min-width: 6rem;
+}
