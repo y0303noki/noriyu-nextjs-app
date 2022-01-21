@@ -1,6 +1,5 @@
 export type Blog = {
   id: string;
-
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
@@ -12,5 +11,5 @@ export type Blog = {
     height: number;
     width: number;
   };
-  tag: string;
+  tag: string[];
 };

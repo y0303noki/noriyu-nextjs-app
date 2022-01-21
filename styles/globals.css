@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.footer {
+  margin-top: auto;
+  padding: 30px 0;
+  background: #89c7de;
+  color: #fff;
+  text-align: center;
+}
 .min-h-24 {
   min-height: 6rem;
 }

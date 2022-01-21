@@ -26,7 +26,8 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
               <ul className='flex space-x-4 justify-center text-sm md:text-base tracking-wider'>
                 <li
                   className={
-                    (isHome ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') + 'p-4'
+                    (isHome ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') +
+                    'p-4 list-none'
                   }
                 >
                   <Link href={'/'}>
@@ -35,7 +36,8 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
                 </li>
                 <li
                   className={
-                    (!isHome ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') + 'p-4'
+                    (!isHome ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') +
+                    'p-4 list-none'
                   }
                 >
                   <Link href={'/blog'}>
@@ -73,14 +75,14 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
                       <SnsLink
                         name={'instagram'}
                         imagePath={'/images/logo/Instagram_Glyph_Gradient_RGB.png'}
-                        url={'aaa'}
+                        url={'https://www.instagram.com/noriyu_tataero'}
                       ></SnsLink>
                     </li>
                     <li className='inline px-4'>
                       <SnsLink
                         name={'twitter'}
                         imagePath={'/images/logo/2021 Twitter logo - blue.png'}
-                        url={'aaa'}
+                        url={'https://twitter.com/noriyuttey'}
                       ></SnsLink>
                     </li>
                     <li className='inline px-4'>
@@ -101,7 +103,7 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
       <div className='text-center mb-4' onClick={returnTop}>
         To Top{' '}
       </div>
-      <footer className='flex flex-grow flex-shrink p-8 border-solid border-t justify-center items-center'>
+      <footer className='flex flex-grow flex-shrink p-4 border-solid border-t justify-center items-center bg-gray-100 footer'>
         Noriyu site
         {/* <span className='h-4 ml-2'>
             <Image src='/vercel.svg' alt='Vercel Logo' width={72} height={16} />
