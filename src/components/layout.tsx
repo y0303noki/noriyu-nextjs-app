@@ -23,15 +23,22 @@ const Layout = ({ children }: { children: any }) => {
           <>
             <div className='h-8 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500'></div>
             <div className='flex h-full justify-center pt-8 items-center flex-col lg:flex-row'>
-              <div className='w-48 h-48 text-center'>
-                <Image
-                  priority
+              <div className='text-centerx rounded-full m-4 border-red-4 '>
+                <img
                   src='/images/me/mydog.jpg'
-                  className='rounded-full '
+                  className='rounded-full border-white-2'
                   height={144}
                   width={144}
                   alt={name}
-                />
+                ></img>
+                {/* <Image
+                  priority
+                  src='/images/me/mydog.jpg'
+                  className='rounded-full border-red'
+                  height={144}
+                  width={144}
+                  alt={name}
+                /> */}
               </div>
               <div className=''>
                 <p className='text-5xl text-center lg:text-left'>{name}</p>
