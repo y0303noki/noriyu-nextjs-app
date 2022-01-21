@@ -5,8 +5,15 @@ import SnsLink from './sns';
 
 const name = 'Noriyu!';
 const selfIntroduction: string =
-  '自己紹介です。僕は僕です。頑張ります。人生！人生！あああああああああああああえええええええええええええええええええええ';
+  'アイコンは実家で飼っているミニチュアダックスです。自己紹介です。僕は僕です。頑張ります。人生！人生！あああああああああああああえええええええええええええええええええええ';
 export const siteTitle = 'Next.js Sample Website';
+// トップに戻る
+const returnTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
 
 const Layout = ({ children }: { children: any }) => {
   return (
@@ -14,21 +21,22 @@ const Layout = ({ children }: { children: any }) => {
       <header className=''>
         {
           <>
-            <div className='flex h-full justify-center pt-8'>
-              <div className='w-48 h-48'>
+            <div className='h-8 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500'></div>
+            <div className='flex h-full justify-center pt-8 items-center flex-col lg:flex-row'>
+              <div className='w-48 h-48 text-center'>
                 <Image
                   priority
-                  src='/images/dogsample.jpg'
+                  src='/images/me/mydog.jpg'
                   className='rounded-full '
                   height={144}
                   width={144}
                   alt={name}
                 />
               </div>
-              <div>
-                <p className='text-5xl'>{name}</p>
+              <div className=''>
+                <p className='text-5xl text-center lg:text-left'>{name}</p>
                 <p className='max-w-sm p-4'>{selfIntroduction}</p>
-                <ul>
+                <ul className='text-center'>
                   <li className='inline px-4'>
                     <SnsLink
                       name={'instagram'}
@@ -57,6 +65,16 @@ const Layout = ({ children }: { children: any }) => {
         }
       </header>
       <main>{children}</main>
+      <div className='text-center mb-4' onClick={returnTop}>
+        To Top{' '}
+      </div>
+      <footer className='flex flex-grow flex-shrink p-8 border-solid border-t justify-center items-center'>
+        Noriyu site
+        {/* <span className='h-4 ml-2'>
+            <Image src='/vercel.svg' alt='Vercel Logo' width={72} height={16} />
+          </span> */}
+      </footer>
+
       {/* {!home && (
         <div className=''>
           <Link href='/'>

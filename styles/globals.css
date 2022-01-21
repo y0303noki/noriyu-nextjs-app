@@ -9,3 +9,15 @@
 .min-w-24 {
   min-width: 6rem;
 }
+
+.max-w-80 {
+  max-width: 20rem;
+}
+
+.github-icon:before {
+  /* content: url(../public/images/logo/GitHub-Mark-32px.png); */
+  content: '\f445';
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+}

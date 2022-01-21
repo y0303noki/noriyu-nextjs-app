@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/layout';
 import MyApp from '../components/MyApp/myApp';
+import ZasetuApp from '../components/ZasetuApp/zasetuApp';
 
 const Home: NextPage = () => {
   return (
@@ -25,28 +26,37 @@ const Home: NextPage = () => {
           {/* コンテンツ */}
           <div className='p-4'>
             {/* 自分のアプリ一覧 */}
-            <div className='m-8'>
+            <div className='m-2'>
               <h1 className='text-3xl font-bold'>My App</h1>
+              <p className='m-2'>リリースしたアプリ</p>
               <MyApp></MyApp>
             </div>
+            {/* 挫折したアプリ */}
+            <div className='m-2'>
+              <h1 className='text-3xl font-bold'>Zasetu</h1>
+              <p className='m-2'>
+                作ってみたけどリリースまで至らなかったり、途中で放棄してしまったアプリ
+              </p>
+              <ZasetuApp></ZasetuApp>
+            </div>
             {/* 自分の記事一覧 */}
-            <div className='m-8'>
+            <div className='m-2'>
               <h1 className='text-3xl font-bold'>Article</h1>
-              comming soon
+              <p className='m-2'>自分の作った記事。あれば</p>
             </div>
             {/* 自分のブログ一覧 */}
-            <div className='m-8'>
+            <div className='m-2'>
               <h1 className='text-3xl font-bold'>Blog</h1>
-              comming soon
+              <p className='m-2'>ブログ。そのうち作る</p>
             </div>
             {/* なんか適当に画像 */}
-            <div className='m-8'>
+            <div className='m-2'>
               <h1 className='text-3xl font-bold'>Images</h1>
-              comming soon
+              <p className='m-2'>画像をおく</p>
             </div>
           </div>
 
-          <div className='flex items-center justify-center flex-wrap max-w-screen-md'>
+          {/* <div className='flex items-center justify-center flex-wrap max-w-screen-md'>
             <a
               href='https://nextjs.org/docs'
               className='m-4 p-6 text-left no-underline border-solid border border-gray-200 rounded-lg max-w-xs transition-colors duration-150 ease-linear hover:border-blue-600 hover:text-blue-600 '
@@ -78,10 +88,10 @@ const Home: NextPage = () => {
               <h2>Deploy &rarr;</h2>
               <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
             </a>
-          </div>
+          </div> */}
         </main>
 
-        <footer className='flex flex-grow flex-shrink p-8 border-solid border-t justify-center items-center'>
+        {/* <footer className='flex flex-grow flex-shrink p-8 border-solid border-t justify-center items-center'>
           <a
             href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
             target='_blank'
@@ -92,7 +102,7 @@ const Home: NextPage = () => {
               <Image src='/vercel.svg' alt='Vercel Logo' width={72} height={16} />
             </span>
           </a>
-        </footer>
+        </footer> */}
       </div>
     </Layout>
   );
