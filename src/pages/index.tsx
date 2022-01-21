@@ -8,7 +8,7 @@ import ZasetuApp from '../components/ZasetuApp/zasetuApp';
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <Layout isHome={true}>
       <div>
         <Head>
           <title>Noriyu my App</title>

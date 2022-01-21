@@ -15,23 +15,48 @@ const returnTop = () => {
   });
 };
 
-const Layout = ({ children }: { children: any }) => {
+const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
   return (
     <div className=''>
       <header className=''>
         {
           <>
             <div className='h-8 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500'></div>
-            <div className='flex h-full justify-center pt-8 items-center flex-col lg:flex-row'>
-              <div className='text-centerx rounded-full m-4 border-red-4 '>
-                <img
-                  src='/images/me/mydog.jpg'
-                  className='rounded-full border-white-2'
-                  height={144}
-                  width={144}
-                  alt={name}
-                ></img>
-                {/* <Image
+            <nav className='border-b'>
+              <ul className='flex space-x-4 justify-center text-sm md:text-base tracking-wider'>
+                <li
+                  className={
+                    (isHome ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') + 'p-4'
+                  }
+                >
+                  <Link href={'/'}>
+                    <a className='p-4 m-4'>Home</a>
+                  </Link>
+                </li>
+                <li
+                  className={
+                    (!isHome ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') + 'p-4'
+                  }
+                >
+                  <Link href={'/blog'}>
+                    <a className='p-4 m-4'>Blog</a>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+
+            {/* home以外は自己紹介らへんを消す */}
+            {isHome && (
+              <div className='flex h-full justify-center pt-8 items-center flex-col lg:flex-row'>
+                <div className='text-centerx rounded-full m-4 border-red-4 '>
+                  <img
+                    src='/images/me/mydog.jpg'
+                    className='rounded-full border-white-2'
+                    height={144}
+                    width={144}
+                    alt={name}
+                  ></img>
+                  {/* <Image
                   priority
                   src='/images/me/mydog.jpg'
                   className='rounded-full border-red'
@@ -39,35 +64,36 @@ const Layout = ({ children }: { children: any }) => {
                   width={144}
                   alt={name}
                 /> */}
+                </div>
+                <div className=''>
+                  <p className='text-5xl text-center lg:text-left'>{name}</p>
+                  <p className='max-w-sm p-4'>{selfIntroduction}</p>
+                  <ul className='text-center'>
+                    <li className='inline px-4'>
+                      <SnsLink
+                        name={'instagram'}
+                        imagePath={'/images/logo/Instagram_Glyph_Gradient_RGB.png'}
+                        url={'aaa'}
+                      ></SnsLink>
+                    </li>
+                    <li className='inline px-4'>
+                      <SnsLink
+                        name={'twitter'}
+                        imagePath={'/images/logo/2021 Twitter logo - blue.png'}
+                        url={'aaa'}
+                      ></SnsLink>
+                    </li>
+                    <li className='inline px-4'>
+                      <SnsLink
+                        name={'github'}
+                        imagePath={'/images/logo/GitHub-Mark-32px.png'}
+                        url={'https://github.com/y0303noki'}
+                      ></SnsLink>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className=''>
-                <p className='text-5xl text-center lg:text-left'>{name}</p>
-                <p className='max-w-sm p-4'>{selfIntroduction}</p>
-                <ul className='text-center'>
-                  <li className='inline px-4'>
-                    <SnsLink
-                      name={'instagram'}
-                      imagePath={'/images/logo/Instagram_Glyph_Gradient_RGB.png'}
-                      url={'aaa'}
-                    ></SnsLink>
-                  </li>
-                  <li className='inline px-4'>
-                    <SnsLink
-                      name={'twitter'}
-                      imagePath={'/images/logo/2021 Twitter logo - blue.png'}
-                      url={'aaa'}
-                    ></SnsLink>
-                  </li>
-                  <li className='inline px-4'>
-                    <SnsLink
-                      name={'github'}
-                      imagePath={'/images/logo/GitHub-Mark-32px.png'}
-                      url={'https://github.com/y0303noki'}
-                    ></SnsLink>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            )}
           </>
         }
       </header>
