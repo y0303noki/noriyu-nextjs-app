@@ -1,5 +1,5 @@
 import { Category } from './category';
-import { Common } from './Common';
+import { Common } from './common';
 
 export type Blog = Common & {
   title: string;
