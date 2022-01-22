@@ -9,14 +9,16 @@ import Seo from '../components/seo';
 import { Category } from '../../types/category';
 
 dayjs.locale('ja');
+const baseUrl = process.env.NEXT_PUBLIC_HOST;
 
 const Blog = ({ blogs }: { blogs: Blog[] }) => {
   return (
     <Layout isHome={false}>
       <Seo
-        pageTitle={'noriyu app'}
-        pageDescription={'個人ブログです'}
-        pageImg={''}
+        pageTitle={'noriyu dev blog'}
+        pageDescription={'noriyu no blog'}
+        pagePath={`${baseUrl}/blog`}
+        pageImg={`${baseUrl}/images/me/mydog.jpg`}
         pageImgWidth={1280}
         pageImgHeight={960}
       ></Seo>
