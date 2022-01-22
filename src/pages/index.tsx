@@ -14,8 +14,9 @@ const Home: NextPage = () => {
     <>
       <Layout isHome={true}>
         <Seo
-          pageTitle={'noriyu app'}
-          pageDescription={'個人ブログです'}
+          pageTitle={'noriyu dev'}
+          pageDescription={'noriyuの個人サイト'}
+          pagePath={`${baseUrl}`}
           pageImg={`${baseUrl}/images/me/mydog.jpg`}
           pageImgWidth={1280}
           pageImgHeight={960}

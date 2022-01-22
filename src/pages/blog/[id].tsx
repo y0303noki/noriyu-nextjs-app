@@ -10,13 +10,13 @@ import ReturnTopButton from '../../components/Common/returnTopButton';
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
 
 export default function BlogId({ blog }: { blog: Blog }) {
-  console.log(baseUrl);
   return (
     <Layout isHome={false}>
       <Seo
-        pageTitle={'noriyu app'}
-        pageDescription={'個人ブログです'}
-        pageImg={''}
+        pageTitle={'noriyu dev'}
+        pageDescription={'noriyu no blog'}
+        pagePath={`${baseUrl}/blog/${blog.id}`}
+        pageImg={`${baseUrl}/images/me/mydog.jpg`}
         pageImgWidth={1280}
         pageImgHeight={960}
       ></Seo>

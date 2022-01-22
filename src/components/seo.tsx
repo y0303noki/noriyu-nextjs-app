@@ -10,10 +10,10 @@ const Seo: VFC<MetaData> = ({
   pageImgWidth,
   pageImgHeight,
 }) => {
-  const defaultTitle = 'demo';
-  const defaultDescription = 'demo';
+  const defaultTitle = 'noriyu dev';
+  const defaultDescription = 'noriyu no site';
 
-  const title = pageTitle ? `${pageTitle} | ${defaultTitle}` : defaultTitle;
+  const title = pageTitle ? `${pageTitle}` : defaultTitle;
   const description = pageDescription ? pageDescription : defaultDescription;
   const url = pagePath;
   const imgUrl = pageImg;
@@ -33,6 +33,9 @@ const Seo: VFC<MetaData> = ({
       <meta property='og:image' content={imgUrl} />
       <meta property='og:image:width' content={String(imgWidth)} />
       <meta property='og:image:height' content={String(imgHeight)} />
+      <meta name='twitter:card' content='Summary Card' />
+      <meta name='twitter:site' content='@Noriyuttey' />
+
       <link rel='preconnect' href='https://fonts.gstatic.com' />
       <link
         href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap'
