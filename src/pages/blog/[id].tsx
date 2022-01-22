@@ -3,6 +3,7 @@ import Layout from '../../components/layout';
 import type { Blog } from '../../../types/blog';
 import dayjs from 'dayjs';
 import Seo from '../../components/seo';
+import { Category } from '../../../types/category';
 
 export default function BlogId({ blog }: { blog: Blog }) {
   return (
@@ -19,7 +20,7 @@ export default function BlogId({ blog }: { blog: Blog }) {
       {/* カテゴリー */}
       {blog.category.length && (
         <div className='m-2'>
-          {blog.category.map((category, index) => (
+          {blog.category.map((category: Category, index) => (
             <span
               key={category.id}
               className={

@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import 'dayjs/locale/ja';
 import dayjs from 'dayjs';
 import Seo from '../components/seo';
+import { Category } from '../../types/category';
 
 dayjs.locale('ja');
 
@@ -34,7 +35,7 @@ const Blog = ({ blogs }: { blogs: Blog[] }) => {
             {/* カテゴリー */}
             {blog.category.length > 0 && (
               <div className='m-2'>
-                {blog.category.map((category, index) => (
+                {blog.category.map((category: Category, index) => (
                   <span
                     key={category.id}
                     className={
