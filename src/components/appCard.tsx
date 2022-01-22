@@ -82,7 +82,7 @@ const AppCard = ({
         )}
         {/* タグ */}
         <div className='px-6 pt-4 pb-2'>
-          {tags.map((tag: string, index: number) => (
+          {tags.map((tag: string) => (
             <span
               key={tag}
               className={
