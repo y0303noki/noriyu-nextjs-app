@@ -4,8 +4,13 @@ import type { Blog } from '../../../types/blog';
 import dayjs from 'dayjs';
 import Seo from '../../components/seo';
 import { Category } from '../../../types/category';
+import { TwitterShareButton, TwitterIcon } from 'react-share';
+import ReturnTopButton from '../../components/Common/returnTopButton';
+
+const baseUrl = process.env.NEXT_PUBLIC_HOST;
 
 export default function BlogId({ blog }: { blog: Blog }) {
+  console.log(baseUrl);
   return (
     <Layout isHome={false}>
       <Seo
@@ -15,16 +20,18 @@ export default function BlogId({ blog }: { blog: Blog }) {
         pageImgWidth={1280}
         pageImgHeight={960}
       ></Seo>
-      <p className='text-gray-400 ml-2'>{dayjs(blog.publishedAt).format('YYYY年MM月DD日 (dd)')}</p>
-      <p className='text-2xl font-bold m-2 '>{blog.title}</p>
+      <p className='text-gray-400 m-2 text-center'>
+        {dayjs(blog.publishedAt).format('YYYY年MM月DD日 (dd)')}
+      </p>
+      <p className='text-2xl font-bold m-2 text-center '>{blog.title}</p>
       {/* カテゴリー */}
       {blog.category.length && (
-        <div className='m-2'>
+        <div className='text-center m-2'>
           {blog.category.map((category: Category) => (
             <span
               key={category.id}
               className={
-                'rounded-md p-2 m-1 font-semibold text-gray-50 ' +
+                'rounded-md text-sm p-1 m-1 text-gray-50 ' +
                 (category.id == 'mfonvfqwuj8' ? 'bg-blue-500' : 'bg-gray-500')
               }
             >
@@ -33,27 +40,25 @@ export default function BlogId({ blog }: { blog: Blog }) {
           ))}
         </div>
       )}
-      {/*
-      {blog.category.length && (
-        <ul>
-          {blog.category.map((cate) => {
-            return (
-              <>
-                <li key={cate.id} className='rounded-full bg-gray-300'>
-                  #{cate.name}{' '}
-                </li>
-              </>
-            );
-          })}
-        </ul>
-      )} */}
+      <div className='border-b'></div>
       {/* ここから本文 */}
       <div
-        className='prose m-2 '
+        className='prose  bg-gray-100 p-8 my-4 mx-4 sm:mx-auto'
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
       />
+
+      <div className='text-center'>
+        <ReturnTopButton></ReturnTopButton>
+      </div>
+
+      <div className='m-4'>
+        {/* Twitterでシェア */}
+        <TwitterShareButton url={`${baseUrl}/blog/${blog.id}`} title={blog.title}>
+          <TwitterIcon size={50} round={true} />
+        </TwitterShareButton>
+      </div>
     </Layout>
   );
 }
