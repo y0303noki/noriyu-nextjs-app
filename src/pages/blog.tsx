@@ -35,7 +35,7 @@ const Blog = ({ blogs }: { blogs: Blog[] }) => {
             {/* カテゴリー */}
             {blog.category.length > 0 && (
               <div className='m-2'>
-                {blog.category.map((category: Category, index) => (
+                {blog.category.map((category: Category, index: number) => (
                   <span
                     key={category.id}
                     className={

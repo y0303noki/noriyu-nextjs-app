@@ -20,7 +20,7 @@ export default function BlogId({ blog }: { blog: Blog }) {
       {/* カテゴリー */}
       {blog.category.length && (
         <div className='m-2'>
-          {blog.category.map((category: Category, index) => (
+          {blog.category.map((category: Category, index: number) => (
             <span
               key={category.id}
               className={
