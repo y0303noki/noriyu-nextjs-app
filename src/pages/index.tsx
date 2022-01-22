@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         <Seo
           pageTitle={'noriyu app'}
           pageDescription={'個人ブログです'}
-          pageImg={''}
+          pageImg={'https://noriyu-nextjs-app.vercel.app/images/me/mydog.jpg'}
           pageImgWidth={1280}
           pageImgHeight={960}
         ></Seo>
