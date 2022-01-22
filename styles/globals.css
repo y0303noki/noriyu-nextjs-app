@@ -2,10 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+.footer {
+  margin-top: auto;
+  padding: 30px 0;
+  background: #89c7de;
+  color: #fff;
+  text-align: center;
+}
 .min-h-24 {
   min-height: 6rem;
 }
 
 .min-w-24 {
   min-width: 6rem;
+}
+
+.max-w-80 {
+  max-width: 20rem;
+}
+
+.border-red-4 {
+  border: 4px #ff0000 solid;
+}
+
+.border-white-2 {
+  border: 2px #ffffff solid;
+}
+
+.github-icon:before {
+  /* content: url(../public/images/logo/GitHub-Mark-32px.png); */
+  content: '\f445';
+  display: inline-block;
+  width: 2px;
+  height: 2px;
 }

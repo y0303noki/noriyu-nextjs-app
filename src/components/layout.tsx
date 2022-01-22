@@ -5,42 +5,75 @@ import SnsLink from './sns';
 
 const name = 'Noriyu!';
 const selfIntroduction: string =
-  '自己紹介です。僕は僕です。頑張ります。人生！人生！あああああああああああああえええええええええええええええええええええ';
+  'このサイトでは私のポートフォリオと開発兼日常のブログを投稿します。アイコンは実家で飼っているミニチュアダックスです。';
 export const siteTitle = 'Next.js Sample Website';
+// トップに戻る
+const returnTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
 
-const Layout = ({ children }: { children: any }) => {
+const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
   return (
-    <div className=''>
-      <header className=''>
-        {
-          <>
-            <div className='flex h-full justify-center pt-8'>
-              <div className='w-48 h-48'>
-                <Image
-                  priority
-                  src='/images/dogsample.jpg'
-                  className='rounded-full '
+    <>
+      {
+        <>
+          {/* <div className='h-8 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500'></div> */}
+          <nav className='border-b'>
+            <ul className='flex space-x-4 justify-center text-sm md:text-base tracking-wider'>
+              <li
+                className={
+                  (isHome ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') +
+                  'p-4 list-none'
+                }
+              >
+                <Link href={'/'}>
+                  <a className='p-4 m-4'>Home</a>
+                </Link>
+              </li>
+              <li
+                className={
+                  (!isHome ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') +
+                  'p-4 list-none'
+                }
+              >
+                <Link href={'/blog'}>
+                  <a className='p-4 m-4'>Blog</a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* home以外は自己紹介らへんを消す */}
+          {isHome && (
+            <div className='flex h-full justify-center pt-8 items-center flex-col lg:flex-row'>
+              <div className='text-centerx rounded-full m-4 border-red-4 '>
+                <img
+                  src='/images/me/mydog.jpg'
+                  className='rounded-full border-white-2'
                   height={144}
                   width={144}
                   alt={name}
-                />
+                ></img>
               </div>
-              <div>
-                <p className='text-5xl'>{name}</p>
+              <div className=''>
+                <p className='text-5xl text-center lg:text-left'>{name}</p>
                 <p className='max-w-sm p-4'>{selfIntroduction}</p>
-                <ul>
+                <ul className='text-center'>
                   <li className='inline px-4'>
                     <SnsLink
                       name={'instagram'}
                       imagePath={'/images/logo/Instagram_Glyph_Gradient_RGB.png'}
-                      url={'aaa'}
+                      url={'https://www.instagram.com/noriyu_tataero'}
                     ></SnsLink>
                   </li>
                   <li className='inline px-4'>
                     <SnsLink
                       name={'twitter'}
                       imagePath={'/images/logo/2021 Twitter logo - blue.png'}
-                      url={'aaa'}
+                      url={'https://twitter.com/noriyuttey'}
                     ></SnsLink>
                   </li>
                   <li className='inline px-4'>
@@ -53,18 +86,16 @@ const Layout = ({ children }: { children: any }) => {
                 </ul>
               </div>
             </div>
-          </>
-        }
-      </header>
+          )}
+        </>
+      }
       <main>{children}</main>
-      {/* {!home && (
-        <div className=''>
-          <Link href='/'>
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )} */}
-    </div>
+      {/* <div className='text-center mb-4' onClick={returnTop}>
+        To Top{' '}
+      </div> */}
+      {/* <footer className='flex flex-grow flex-shrink p-4 border-solid border-t justify-center items-center bg-gray-100 footer'> */}
+      {/* <footer>Noriyu site</footer> */}
+    </>
   );
 };
 
