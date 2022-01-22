@@ -1,11 +1,10 @@
-export type Blog = {
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  revisedAt: string;
+import { Category } from './category';
+import { Common } from './Common';
+
+export type Blog = Common & {
   title: string;
   body: string;
+  category: Category[];
   eye_catch: {
     url: string;
     height: number;

@@ -5,7 +5,7 @@ import SnsLink from './sns';
 
 const name = 'Noriyu!';
 const selfIntroduction: string =
-  'アイコンは実家で飼っているミニチュアダックスです。自己紹介です。僕は僕です。頑張ります。人生！人生！あああああああああああああえええええええええええええええええええええ';
+  'このサイトでは私のポートフォリオと開発兼日常のブログを投稿します。アイコンは実家で飼っているミニチュアダックスです。';
 export const siteTitle = 'Next.js Sample Website';
 // トップに戻る
 const returnTop = () => {
@@ -21,7 +21,7 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
       <header className=''>
         {
           <>
-            <div className='h-8 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500'></div>
+            {/* <div className='h-8 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500'></div> */}
             <nav className='border-b'>
               <ul className='flex space-x-4 justify-center text-sm md:text-base tracking-wider'>
                 <li

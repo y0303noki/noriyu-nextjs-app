@@ -64,7 +64,7 @@ const AppCard = ({
           {appStoreUrl != '' && (
             <a className='h-4 ml-2' href={appStoreUrl} target={'_blank'} rel='noreferrer'>
               <Image
-                src='/images/logo/aoostore-icon.png'
+                src='/images/logo/appstore-icon.png'
                 alt='AppStore Logo'
                 width={logoWidth}
                 height={logoWidth}
@@ -99,3 +99,29 @@ const AppCard = ({
 };
 
 export default AppCard;
+
+// export const getStaticProps = async () => {
+//   console.log('start');
+//   const url = 'https://qiita.com/ksyunnnn/items/bfe2b9c568e97bb6b494';
+//   let data;
+
+//   fetch(url)
+//     .then((res) => res.text())
+//     .then((text) => {
+//       const el = new DOMParser().parseFromString(text, 'text/html');
+//       const headEls = el.head.children;
+//       Array.from(headEls).map((v) => {
+//         const prop = v.getAttribute('property');
+//         if (!prop) return;
+//         console.log(prop, v.getAttribute('content'));
+//       });
+//     });
+
+//   // const data = await client.get({ endpoint: 'blog' });
+
+//   return {
+//     props: {
+//       blogs: 'data.contents',
+//     },
+//   };
+// };

@@ -13,11 +13,11 @@ const Blog = ({ blogs }: { blogs: Blog[] }) => {
     <>
       <Layout isHome={false}>
         <div>
-          <div className='m-4'>develop関係、プライベート関係なしに書きます。</div>
+          <div className='m-4'>色々なジャンルで投稿</div>
           <ul className='m-4'>
             {blogs.map((blog: Blog) => (
               <li key={blog.id} className='m-1'>
-                <Link href={`/devBlog/${blog.id}`}>
+                <Link href={`/blog/${blog.id}`}>
                   <a className=' font-bold'>
                     {blog.title}
                     <p className='text-gray-400 ml-2'>

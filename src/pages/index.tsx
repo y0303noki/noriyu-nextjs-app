@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -41,17 +41,17 @@ const Home: NextPage = () => {
           {/* 自分の記事一覧 */}
           <div className='m-2'>
             <h2 className='text-3xl font-bold'>Article</h2>
-            <p className='m-2'>自分の作った記事。あれば</p>
+            <p className='m-2'>ZennやQitaに投稿した記事</p>
           </div>
-          {/* 自分のブログ一覧 */}
-          <div className='m-2'>
-            <h2 className='text-3xl font-bold'>Blog</h2>
-            <p className='m-2'>ブログ。そのうち作る</p>
-          </div>
+
           {/* なんか適当に画像 */}
           <div className='m-2'>
             <h2 className='text-3xl font-bold'>Images</h2>
             <p className='m-2'>画像をおく</p>
+          </div>
+          <div className='m-2'>
+            <h2 className='text-3xl font-bold'>Develop</h2>
+            <p className='m-2'>開発機能。自分用</p>
           </div>
         </div>
 
