@@ -26,14 +26,14 @@ const Blog = ({ blogs }: { blogs: Blog[] }) => {
       <div className='m-4'>色々なジャンルで投稿</div>
       <ul className='m-4'>
         {blogs.map((blog: Blog) => (
-          <li key={blog.id} className='m-1 mt-4'>
+          <li key={blog.id} className='m-1 mt-4 '>
             <Link href={`/blog/${blog.id}`}>
               <a className=' font-bold'>
                 <div className='flex flex-row'>
-                  <div className='bg-gray-300 w-20 h-20 rounded-2xl flex items-center justify-center'>
-                    <div className='text-center'>
+                  <div className='bg-gray-300 bg-opacity-50 w-20 h-20 rounded-2xl flex items-center justify-center'>
+                    <div className='text-center mt-1'>
                       {' '}
-                      <CustomEmoji icon={blog.category[0].icon}></CustomEmoji>
+                      <CustomEmoji icon={blog.category[0].icon[0]}></CustomEmoji>
                     </div>
                   </div>
                   <div className=' flex-col'>
