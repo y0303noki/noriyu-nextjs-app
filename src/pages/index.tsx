@@ -1,3 +1,4 @@
+import { Emoji } from 'emoji-mart';
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -17,11 +18,10 @@ const Home: NextPage = () => {
           pageTitle={'noriyu dev'}
           pageDescription={'noriyuの個人サイト'}
           pagePath={`${baseUrl}`}
-          pageImg={`${baseUrl}/images/me/mydog.jpg`}
+          pageImg={`${baseUrl}/images/my_home.jpg`}
           pageImgWidth={1280}
           pageImgHeight={960}
         ></Seo>
-
         {/* コンテンツ */}
         <div className='p-4'>
           {/* 自分のアプリ一覧 */}

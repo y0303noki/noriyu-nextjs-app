@@ -33,8 +33,10 @@ const Seo: VFC<MetaData> = ({
       <meta property='og:image' content={imgUrl} />
       <meta property='og:image:width' content={String(imgWidth)} />
       <meta property='og:image:height' content={String(imgHeight)} />
-      <meta name='twitter:card' content='Summary Card' />
       <meta name='twitter:site' content='@Noriyuttey' />
+      <meta name='twitter:card' content={imgUrl} />
+      <meta name='twitter:title' content={title} />
+      <meta name='twitter:description' content={description} />
 
       <link rel='preconnect' href='https://fonts.gstatic.com' />
       <link
