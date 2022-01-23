@@ -7,6 +7,7 @@ import 'dayjs/locale/ja';
 import dayjs from 'dayjs';
 import Seo from '../components/seo';
 import { Category } from '../../types/category';
+import CustomEmoji from '../components/Atom/customEmoji';
 
 dayjs.locale('ja');
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
@@ -28,10 +29,20 @@ const Blog = ({ blogs }: { blogs: Blog[] }) => {
           <li key={blog.id} className='m-1 mt-4'>
             <Link href={`/blog/${blog.id}`}>
               <a className=' font-bold'>
-                <p className='text-gray-400 ml-2'>
-                  {dayjs(blog.publishedAt).format('YYYY年MM月DD日 (dd)')}
-                </p>
-                <p className='text-3xl ml-2'>{blog.title}</p>
+                <div className='flex flex-row'>
+                  <div className='bg-gray-300 w-20 h-20 rounded-2xl flex items-center justify-center'>
+                    <div className='text-center'>
+                      {' '}
+                      <CustomEmoji icon={blog.category[0].icon}></CustomEmoji>
+                    </div>
+                  </div>
+                  <div className=' flex-col'>
+                    <p className='text-gray-400 ml-2'>
+                      {dayjs(blog.publishedAt).format('YYYY年MM月DD日 (dd)')}
+                    </p>
+                    <p className='text-2xl ml-2'>{blog.title}</p>
+                  </div>
+                </div>
               </a>
             </Link>
             {/* カテゴリー */}
