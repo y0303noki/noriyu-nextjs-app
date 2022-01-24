@@ -19,7 +19,7 @@ const Blog = ({ blogs }: { blogs: Blog[] }) => {
         pageTitle={'noriyu dev blog'}
         pageDescription={'noriyu no blog'}
         pagePath={`${baseUrl}/blog`}
-        pageImg={`${baseUrl}/images/me/mydog.jpg`}
+        pageImg={`${baseUrl}/images/small/my_home_1mb.jpg`}
         pageImgWidth={1280}
         pageImgHeight={960}
       ></Seo>

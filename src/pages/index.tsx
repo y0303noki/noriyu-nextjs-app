@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           pageTitle={'noriyu dev'}
           pageDescription={'noriyuの個人サイト'}
           pagePath={`${baseUrl}`}
-          pageImg={`${baseUrl}/images/my_home.jpg`}
+          pageImg={`${baseUrl}/images/small/my_dog_1mb.jpg`}
           pageImgWidth={1280}
           pageImgHeight={960}
         ></Seo>
