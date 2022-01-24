@@ -34,7 +34,7 @@ const Seo: VFC<MetaData> = ({
       <meta property='og:image:width' content={String(imgWidth)} />
       <meta property='og:image:height' content={String(imgHeight)} />
       <meta name='twitter:site' content='@Noriyuttey' />
-      <meta name='twitter:card' content={imgUrl} />
+      <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={description} />
 
