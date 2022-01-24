@@ -21,7 +21,7 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
       {
         <>
           {/* <div className='h-8 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500'></div> */}
-          <nav className='border-b'>
+          <nav className='border-b -top-0 sticky z-50 bg-white'>
             <ul className='flex space-x-4 justify-center text-sm md:text-base tracking-wider'>
               <li
                 className={

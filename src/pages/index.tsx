@@ -7,6 +7,7 @@ import ReturnTopButton from '../components/Common/returnTopButton';
 import Layout from '../components/layout';
 import MyApp from '../components/MyApp/myApp';
 import Seo from '../components/seo';
+import SkillSet from '../components/SkilSet/skillSet';
 import ZasetuApp from '../components/ZasetuApp/zasetuApp';
 
 const Home: NextPage = () => {
@@ -44,11 +45,25 @@ const Home: NextPage = () => {
             <p className='m-2'>ZennやQitaに投稿した記事</p>
           </div>
 
+          {/* スキルセット */}
+          <div className='m-2'>
+            <h2 className='text-3xl font-bold'>Skil</h2>
+            <p className='m-2'>スキルセット</p>
+            <div className='grid grid-cols-4 gap-4'>
+              <SkillSet imagePath='/images/logo/ionicframework-icon.svg'></SkillSet>
+              <SkillSet imagePath='/images/logo/typescript.svg'></SkillSet>
+              <SkillSet imagePath='/images/logo/angular-icon-1.svg'></SkillSet>
+              <SkillSet imagePath='/images/logo/firebase-1.svg'></SkillSet>
+              <SkillSet imagePath='/images/logo/next-js.svg'></SkillSet>
+            </div>
+          </div>
+
           {/* なんか適当に画像 */}
           <div className='m-2'>
             <h2 className='text-3xl font-bold'>Images</h2>
             <p className='m-2'>画像をおく</p>
           </div>
+          {/* 開発用 */}
           <div className='m-2'>
             <h2 className='text-3xl font-bold'>Develop</h2>
             <p className='m-2'>開発機能。自分用</p>

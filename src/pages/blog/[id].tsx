@@ -7,7 +7,9 @@ import { Category } from '../../../types/category';
 import { TwitterShareButton, TwitterIcon } from 'react-share';
 import ReturnTopButton from '../../components/Common/returnTopButton';
 import CustomEmoji from '../../components/Atom/customEmoji';
+import 'dayjs/locale/ja';
 
+dayjs.locale('ja');
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
 
 export default function BlogId({ blog }: { blog: Blog }) {
