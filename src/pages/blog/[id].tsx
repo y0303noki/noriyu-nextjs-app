@@ -17,7 +17,7 @@ export default function BlogId({ blog }: { blog: Blog }) {
         pageTitle={'noriyu dev'}
         pageDescription={'noriyu no blog'}
         pagePath={`${baseUrl}/blog/${blog.id}`}
-        pageImg={`${baseUrl}/images/my_home.jpg`}
+        pageImg={`${baseUrl}/images/small/my_home_1mb.jpg`}
         pageImgWidth={1280}
         pageImgHeight={960}
       ></Seo>
