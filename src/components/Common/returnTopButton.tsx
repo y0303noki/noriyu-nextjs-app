@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FaArrowUp } from 'react-icons/fa';
 
 const ReturnTopButton = () => {
   const [isButtonActive, setIsButtonActive] = useState(false);
@@ -41,7 +42,7 @@ const ReturnTopButton = () => {
 
   return (
     <button style={style} onClick={returnTop}>
-      Top To
+      Scroll To Top
     </button>
   );
 };

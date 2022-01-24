@@ -6,6 +6,7 @@ import Seo from '../../components/seo';
 import { Category } from '../../../types/category';
 import { TwitterShareButton, TwitterIcon } from 'react-share';
 import ReturnTopButton from '../../components/Common/returnTopButton';
+import CustomEmoji from '../../components/Atom/customEmoji';
 
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
 
@@ -16,13 +17,16 @@ export default function BlogId({ blog }: { blog: Blog }) {
         pageTitle={'noriyu dev'}
         pageDescription={'noriyu no blog'}
         pagePath={`${baseUrl}/blog/${blog.id}`}
-        pageImg={`${baseUrl}/images/me/mydog.jpg`}
+        pageImg={`${baseUrl}/images/my_home.jpg`}
         pageImgWidth={1280}
         pageImgHeight={960}
       ></Seo>
       <p className='text-gray-400 m-2 text-center'>
         {dayjs(blog.publishedAt).format('YYYY年MM月DD日 (dd)')}
       </p>
+      <div className='text-center'>
+        <CustomEmoji icon={blog.category[0].icon[0]}></CustomEmoji>
+      </div>
       <p className='text-2xl font-bold m-2 text-center '>{blog.title}</p>
       {/* カテゴリー */}
       {blog.category.length && (
