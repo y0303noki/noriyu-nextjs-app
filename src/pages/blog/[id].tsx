@@ -13,6 +13,7 @@ dayjs.locale('ja');
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
 
 export default function BlogId({ blog }: { blog: Blog }) {
+  const icon = blog.category.length > 0 ? blog.category[0].icon[0] : '';
   return (
     <Layout isHome={false}>
       <Seo
@@ -27,11 +28,11 @@ export default function BlogId({ blog }: { blog: Blog }) {
         {dayjs(blog.publishedAt).format('YYYY年MM月DD日 (dd)')}
       </p>
       <div className='text-center'>
-        <CustomEmoji icon={blog.category[0].icon[0]}></CustomEmoji>
+        <CustomEmoji icon={icon}></CustomEmoji>
       </div>
       <p className='text-2xl font-bold m-2 text-center '>{blog.title}</p>
       {/* カテゴリー */}
-      {blog.category.length && (
+      {blog.category.length > 0 && (
         <div className='text-center m-2'>
           {blog.category.map((category: Category) => (
             <span

@@ -12,6 +12,30 @@ import CustomEmoji from '../components/Atom/customEmoji';
 dayjs.locale('ja');
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
 
+const BlogLink = ({ blog }: { blog: Blog }) => {
+  const icon = blog.category.length > 0 ? blog.category[0].icon[0] : '';
+  return (
+    <Link href={`/blog/${blog.id}`}>
+      <a className=' font-bold'>
+        <div className='flex flex-row'>
+          <div className='bg-gray-300 bg-opacity-50 w-20 h-20 rounded-2xl flex items-center justify-center'>
+            <div className='text-center mt-1'>
+              {' '}
+              <CustomEmoji icon={icon}></CustomEmoji>
+            </div>
+          </div>
+          <div className=' flex-col'>
+            <p className='text-gray-400 ml-2'>
+              {dayjs(blog.publishedAt).format('YYYY年MM月DD日 (dd)')}
+            </p>
+            <p className='text-2xl ml-2'>{blog.title}</p>
+          </div>
+        </div>
+      </a>
+    </Link>
+  );
+};
+
 const Blog = ({ blogs }: { blogs: Blog[] }) => {
   return (
     <Layout isHome={false}>
@@ -25,44 +49,36 @@ const Blog = ({ blogs }: { blogs: Blog[] }) => {
       ></Seo>
       <div className='m-4'>色々なジャンルで投稿</div>
       <ul className='m-4'>
-        {blogs.map((blog: Blog) => (
-          <li key={blog.id} className='m-1 mt-4 '>
-            <Link href={`/blog/${blog.id}`}>
-              <a className=' font-bold'>
-                <div className='flex flex-row'>
-                  <div className='bg-gray-300 bg-opacity-50 w-20 h-20 rounded-2xl flex items-center justify-center'>
-                    <div className='text-center mt-1'>
-                      {' '}
-                      <CustomEmoji icon={blog.category[0].icon[0]}></CustomEmoji>
-                    </div>
-                  </div>
-                  <div className=' flex-col'>
-                    <p className='text-gray-400 ml-2'>
-                      {dayjs(blog.publishedAt).format('YYYY年MM月DD日 (dd)')}
-                    </p>
-                    <p className='text-2xl ml-2'>{blog.title}</p>
-                  </div>
+        {blogs.map((blog: Blog) => {
+          if (blog.category.length <= 0) {
+            return (
+              <li key={blog.id} className='m-1 mt-4 '>
+                <BlogLink blog={blog}></BlogLink>
+              </li>
+            );
+          } else {
+            return (
+              <li key={blog.id} className='m-1 mt-4 '>
+                <BlogLink blog={blog}></BlogLink>
+                {/* カテゴリー */}
+
+                <div className='m-2'>
+                  {blog.category.map((category: Category) => (
+                    <span
+                      key={category.id}
+                      className={
+                        'rounded-md text-sm p-1 m-1 text-gray-50 ' +
+                        (category.id == 'mfonvfqwuj8' ? 'bg-blue-500' : 'bg-gray-500')
+                      }
+                    >
+                      {category.name}
+                    </span>
+                  ))}
                 </div>
-              </a>
-            </Link>
-            {/* カテゴリー */}
-            {blog.category.length > 0 && (
-              <div className='m-2'>
-                {blog.category.map((category: Category) => (
-                  <span
-                    key={category.id}
-                    className={
-                      'rounded-md text-sm p-1 m-1 text-gray-50 ' +
-                      (category.id == 'mfonvfqwuj8' ? 'bg-blue-500' : 'bg-gray-500')
-                    }
-                  >
-                    {category.name}
-                  </span>
-                ))}
-              </div>
-            )}
-          </li>
-        ))}
+              </li>
+            );
+          }
+        })}
       </ul>
     </Layout>
   );
