@@ -60,6 +60,13 @@ const Home: NextPage = () => {
 
           {/* なんか適当に画像 */}
           <div className='m-2'>
+            <h2 className='text-3xl font-bold'>Kaizen</h2>
+            <p className='m-2'>改善</p>
+            <Link href={'/kaizen'}>Kaizenへ</Link>
+          </div>
+
+          {/* なんか適当に画像 */}
+          <div className='m-2'>
             <h2 className='text-3xl font-bold'>Images</h2>
             <p className='m-2'>画像をおく</p>
           </div>
