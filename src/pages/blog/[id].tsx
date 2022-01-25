@@ -17,8 +17,8 @@ export default function BlogId({ blog }: { blog: Blog }) {
   return (
     <Layout isHome={false}>
       <Seo
-        pageTitle={'noriyu dev'}
-        pageDescription={'noriyu no blog'}
+        pageTitle={`${blog.title}`}
+        pageDescription={`${blog.body}`}
         pagePath={`${baseUrl}/blog/${blog.id}`}
         pageImg={`${baseUrl}/images/small/my_home_1mb.jpg`}
         pageImgWidth={1280}
