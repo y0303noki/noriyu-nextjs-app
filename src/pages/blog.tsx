@@ -61,7 +61,6 @@ const Blog = ({ blogs }: { blogs: Blog[] }) => {
               <li key={blog.id} className='m-1 mt-4 '>
                 <BlogLink blog={blog}></BlogLink>
                 {/* カテゴリー */}
-
                 <div className='m-2'>
                   {blog.category.map((category: Category) => (
                     <span
