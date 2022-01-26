@@ -42,7 +42,7 @@ const Home: NextPage = () => {
           {/* 自分の記事一覧 */}
           <div className='m-2'>
             <h2 className='text-3xl font-bold'>Article</h2>
-            <p className='m-2'>ZennやQitaに投稿した記事</p>
+            <p className='m-2'>ZennやQiitaに投稿した記事</p>
           </div>
 
           {/* スキルセット */}

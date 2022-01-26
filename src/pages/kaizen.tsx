@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import Seo from '../components/seo';
 import type { Issue } from '../../types/issue';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
 
@@ -43,13 +44,17 @@ const Kaizen = ({ issues }: { issues: Issue[] }) => {
             <a className='p-4 m-4'>Homeに戻る</a>
           </Link>
         </div>
+
         <ul className='m-4'>
           {issues.map((issue: Issue) => (
             <li key={issue.id.toString()}>
               <a href={issue.url} target={'_blank'} rel='noreferrer'>
-                <div className='text-2xl font-bold'>{issue.title}</div>
-                <div className='m-2'>{issue.body}</div>
+                <div className='flex flex-row justify-between text-2xl font-bold border-b'>
+                  <p className='mb-1 pl-1'>{issue.title}</p>
+                  <FaArrowAltCircleRight className='mr-4' />
+                </div>
               </a>
+              <div className='m-2'>{issue.body}</div>
               <div className='m-2'>
                 {issue.labels.length > 0 &&
                   issue.labels.map((label: string) => (
