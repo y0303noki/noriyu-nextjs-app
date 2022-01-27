@@ -49,14 +49,14 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
           {/* home以外は自己紹介らへんを消す */}
           {isHome && (
             <div className='flex h-full justify-center pt-8 items-center flex-col lg:flex-row'>
-              <div className='text-centerx rounded-full m-4 border-red-4 '>
-                <img
+              <div className='text-centerx m-4'>
+                <Image
                   src='/images/me/mydog.jpg'
-                  className='rounded-full border-white-2'
+                  className='rounded-full'
                   height={144}
                   width={144}
                   alt={name}
-                ></img>
+                ></Image>
               </div>
               <div className=''>
                 <p className='text-5xl text-center lg:text-left'>{name}</p>

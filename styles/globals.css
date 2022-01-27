@@ -9,6 +9,14 @@
   color: #fff;
   text-align: center;
 }
+
+.overfrow-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .min-h-24 {
   min-height: 6rem;
 }
