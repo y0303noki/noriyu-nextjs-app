@@ -2,13 +2,9 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import Seo from '../components/seo';
 import type { Issue } from '../../types/issue';
-import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { FaArrowAltCircleRight, FaArrowLeft } from 'react-icons/fa';
 
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
-
-const Issue = () => {
-  return;
-};
 
 // 改善一覧
 const issueUrl = 'https://api.github.com/repos/y0303noki/noriyu-nextjs-app/issues';
@@ -38,10 +34,14 @@ const Kaizen = ({ issues }: { issues: Issue[] }) => {
           pageImgWidth={1280}
           pageImgHeight={960}
         ></Seo>
-        <div>KAIZEN一覧</div>
-        <div className='m-4'>
+        <div className='m-2'>
           <Link href={'/'}>
-            <a className='p-4 m-4'>Homeに戻る</a>
+            <a className='flex flex-row items-center'>
+              <p className='m-2'>
+                <FaArrowLeft />
+              </p>
+              <p className=''>Homeに戻る</p>
+            </a>
           </Link>
         </div>
 
@@ -49,12 +49,12 @@ const Kaizen = ({ issues }: { issues: Issue[] }) => {
           {issues.map((issue: Issue) => (
             <li key={issue.id.toString()}>
               <a href={issue.url} target={'_blank'} rel='noreferrer'>
-                <div className='flex flex-row justify-between text-2xl font-bold border-b'>
-                  <p className='mb-1 pl-1'>{issue.title}</p>
-                  <FaArrowAltCircleRight className='mr-4' />
+                <div className='flex flex-row justify-between items-center text-2xl font-bold border-b'>
+                  <p className=''>{issue.title}</p>
+                  <FaArrowAltCircleRight className='' />
                 </div>
               </a>
-              <div className='m-2'>{issue.body}</div>
+              <div className='m-2 overfrow-3'>{issue.body}</div>
               <div className='m-2'>
                 {issue.labels.length > 0 &&
                   issue.labels.map((label: string) => (
@@ -82,7 +82,6 @@ export default Kaizen;
 export const getServerSideProps: GetStaticProps = async (context) => {
   const res = await fetch(issueUrl);
   const datas = await res.json();
-  console.log(datas[0]);
 
   const issues: Issue[] = datas.map((data: any) => {
     const issue: Issue = {
@@ -92,11 +91,18 @@ export const getServerSideProps: GetStaticProps = async (context) => {
       body: data.body,
       state: data.state,
       labels: data.labels.map((label: any) => label.name),
-      createdAt: 'data.createdAt',
-      updatedAt: 'data.updatedAt',
+      author_association: data.author_association,
+      createdAt: data.created_at,
+      updatedAt: data.updated_at,
     };
     return issue;
   });
+
+  // 必要なissueだけにする
+  issues.filter((issue) => issue.author_association === 'OWNER');
+
+  // createdAtの降順に並び替え
+  issues.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1));
 
   return { props: { issues: issues } };
 };

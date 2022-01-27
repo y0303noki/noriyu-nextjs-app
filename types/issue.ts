@@ -5,6 +5,7 @@ export type Issue = {
   body: string;
   state: string;
   labels: string[];
+  author_association: string;
   createdAt: string;
   updatedAt: string;
 };
