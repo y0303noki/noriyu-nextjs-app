@@ -24,7 +24,7 @@ const Home: NextPage = () => {
           pageImgHeight={960}
         ></Seo>
         {/* コンテンツ */}
-        <div className='p-4'>
+        <div className='p-4 '>
           {/* 自分のアプリ一覧 */}
           <div className='m-2'>
             <h2 className='text-3xl font-bold'>My App</h2>
@@ -54,16 +54,6 @@ const Home: NextPage = () => {
 
           {/* なんか適当に画像 */}
           <div className='m-2'>
-            <h2 className='text-3xl font-bold'>Kaizen</h2>
-            <p className='m-2'>改善</p>
-
-            <Link href={'/kaizen'}>
-              <a className='m-2 underline'>Kaizenへ</a>
-            </Link>
-          </div>
-
-          {/* なんか適当に画像 */}
-          <div className='m-2'>
             <h2 className='text-3xl font-bold'>Images</h2>
             <p className='m-2'>画像をおく</p>
           </div>
@@ -73,7 +63,7 @@ const Home: NextPage = () => {
             <p className='m-2'>開発機能。自分用</p>
           </div>
         </div>
-        <div className='text-center mb-12'>
+        <div className='text-center mb-12 '>
           <ReturnTopButton></ReturnTopButton>
         </div>
       </Layout>

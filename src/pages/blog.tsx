@@ -47,7 +47,7 @@ const Blog = ({ blogs }: { blogs: Blog[] }) => {
         pageImgWidth={1280}
         pageImgHeight={960}
       ></Seo>
-      <div className='m-4'>色々なジャンルで投稿</div>
+      <div className='p-4'>色々なジャンルで投稿</div>
       <ul className='m-4'>
         {blogs.map((blog: Blog) => {
           if (blog.category.length <= 0) {
