@@ -1,4 +1,4 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import {
   SiAngular,
   SiFirebase,
@@ -6,7 +6,7 @@ import {
   SiIonic,
   SiNextdotjs,
   SiTypescript,
-} from 'react-icons/Si';
+} from 'react-icons/si';
 
 const SkillSet = () => {
   return (
