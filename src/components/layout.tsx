@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 import SnsLink from './sns';
 
 const name = 'Noriyu!';
@@ -62,26 +63,52 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
                 <p className='text-5xl text-center lg:text-left'>{name}</p>
                 <p className='max-w-sm p-4'>{selfIntroduction}</p>
                 <ul className='text-center'>
-                  <li className='inline px-4'>
-                    <SnsLink
+                  <li className='inline-block px-4'>
+                    <a
+                      href={'https://www.instagram.com/noriyu_tataero'}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='w-4'
+                    >
+                      <FaInstagram size={40}></FaInstagram>
+                    </a>
+
+                    {/* <SnsLink
                       name={'instagram'}
                       imagePath={'/images/logo/Instagram_Glyph_Gradient_RGB.png'}
                       url={'https://www.instagram.com/noriyu_tataero'}
-                    ></SnsLink>
+                    ></SnsLink> */}
                   </li>
-                  <li className='inline px-4'>
-                    <SnsLink
+                  <li className='inline-block px-4'>
+                    <a
+                      href={'https://twitter.com/noriyuttey'}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='w-4'
+                    >
+                      <FaTwitter size={40}></FaTwitter>
+                    </a>
+                    {/* <SnsLink
                       name={'twitter'}
                       imagePath={'/images/logo/2021 Twitter logo - blue.png'}
                       url={'https://twitter.com/noriyuttey'}
-                    ></SnsLink>
+                    ></SnsLink> */}
                   </li>
-                  <li className='inline px-4'>
-                    <SnsLink
+                  <li className='inline-block px-4'>
+                    <a
+                      href={'https://github.com/y0303noki'}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='w-4'
+                    >
+                      <FaGithub size={40}></FaGithub>
+                    </a>
+
+                    {/* <SnsLink
                       name={'github'}
                       imagePath={'/images/logo/GitHub-Mark-32px.png'}
                       url={'https://github.com/y0303noki'}
-                    ></SnsLink>
+                    ></SnsLink> */}
                   </li>
                 </ul>
               </div>
