@@ -10,6 +10,13 @@
   text-align: center;
 }
 
+.overfrow-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .overfrow-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;

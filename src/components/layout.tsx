@@ -1,8 +1,8 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
-import SnsLink from './sns';
+import ThemeChanger from './Atom/themeChanger';
+import { useRouter } from 'next/router';
 
 const name = 'Noriyu!';
 const selfIntroduction: string =
@@ -17,39 +17,55 @@ const returnTop = () => {
 };
 
 const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
+  const router = useRouter();
+  const pathName = router.pathname;
+  console.log(pathName);
   return (
     <>
       {
         <>
           {/* <div className='h-8 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500'></div> */}
-          <nav className='border-b -top-0 sticky z-50 bg-white'>
+          <nav className='border-b -top-0 sticky z-50 bg-white dark:bg-gray-800'>
             <ul className='flex space-x-4 justify-center text-sm md:text-base tracking-wider'>
               <li
                 className={
-                  (isHome ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') +
+                  (pathName == '/' ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') +
                   'p-4 list-none'
                 }
               >
                 <Link href={'/'}>
-                  <a className='p-4 m-4'>Home</a>
+                  <a className='p-4'>Home</a>
                 </Link>
               </li>
               <li
                 className={
-                  (!isHome ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') +
-                  'p-4 list-none'
+                  (pathName == '/blog'
+                    ? 'text-blue-400 font-bold border-b-4 border-blue-400 '
+                    : '') + 'p-4 list-none'
                 }
               >
                 <Link href={'/blog'}>
-                  <a className='p-4 m-4'>Blog</a>
+                  <a className='p-4'>Blog</a>
+                </Link>
+              </li>
+              <li
+                className={
+                  (pathName == '/kaizen'
+                    ? 'text-blue-400 font-bold border-b-4 border-blue-400 '
+                    : '') + 'p-4 list-none'
+                }
+              >
+                <Link href={'/kaizen'}>
+                  <a className='p-4'>Kaizen</a>
                 </Link>
               </li>
             </ul>
           </nav>
 
+          <ThemeChanger></ThemeChanger>
           {/* home以外は自己紹介らへんを消す */}
           {isHome && (
-            <div className='flex h-full justify-center pt-8 items-center flex-col lg:flex-row'>
+            <div className='flex h-full justify-center pt-8 items-center flex-col lg:flex-row '>
               <div className='text-centerx m-4'>
                 <Image
                   src='/images/me/mydog.jpg'
@@ -116,7 +132,7 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
           )}
         </>
       }
-      <main>{children}</main>
+      <main className=''>{children}</main>
       {/* <div className='text-center mb-4' onClick={returnTop}>
         To Top{' '}
       </div> */}

@@ -50,7 +50,7 @@ export default function BlogId({ blog }: { blog: Blog }) {
       <div className='border-b'></div>
       {/* ここから本文 */}
       <div
-        className='prose  bg-gray-100 p-8 my-4 mx-4 sm:mx-auto'
+        className='prose  p-8 my-4 mx-auto bg-gray-100 dark:bg-gray-300'
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}

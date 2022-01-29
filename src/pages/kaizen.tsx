@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Seo from '../components/seo';
 import type { Issue } from '../../types/issue';
 import { FaArrowAltCircleRight, FaArrowLeft } from 'react-icons/fa';
+import Layout from '../components/layout';
 
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
 
@@ -12,66 +13,59 @@ const Kaizen = ({ issues }: { issues: Issue[] }) => {
   if (issues.length <= 0) {
     return (
       <>
-        <Seo
-          pageTitle={`kaizen`}
-          pageDescription={`改善一覧です`}
-          pagePath={`${baseUrl}/kaizen`}
-          pageImg={`${baseUrl}/images/small/my_home_1mb.jpg`}
-          pageImgWidth={1280}
-          pageImgHeight={960}
-        ></Seo>
-        <p>issueなし</p>
+        <Layout isHome={false}>
+          <Seo
+            pageTitle={`kaizen`}
+            pageDescription={`改善一覧です`}
+            pagePath={`${baseUrl}/kaizen`}
+            pageImg={`${baseUrl}/images/small/my_home_1mb.jpg`}
+            pageImgWidth={1280}
+            pageImgHeight={960}
+          ></Seo>
+          <p>issueなし</p>
+        </Layout>
       </>
     );
   } else {
     return (
       <>
-        <Seo
-          pageTitle={`kaizen`}
-          pageDescription={`改善一覧です`}
-          pagePath={`${baseUrl}/kaizen`}
-          pageImg={`${baseUrl}/images/small/my_home_1mb.jpg`}
-          pageImgWidth={1280}
-          pageImgHeight={960}
-        ></Seo>
-        <div className='m-2'>
-          <Link href={'/'}>
-            <a className='flex flex-row items-center'>
-              <p className='m-2'>
-                <FaArrowLeft />
-              </p>
-              <p className=''>Homeに戻る</p>
-            </a>
-          </Link>
-        </div>
-
-        <ul className='m-4'>
-          {issues.map((issue: Issue) => (
-            <li key={issue.id.toString()}>
-              <a href={issue.url} target={'_blank'} rel='noreferrer'>
-                <div className='flex flex-row justify-between items-center text-2xl font-bold border-b'>
-                  <p className=''>{issue.title}</p>
-                  <FaArrowAltCircleRight className='' />
+        <Layout isHome={false}>
+          <Seo
+            pageTitle={`kaizen`}
+            pageDescription={`改善一覧です`}
+            pagePath={`${baseUrl}/kaizen`}
+            pageImg={`${baseUrl}/images/small/my_home_1mb.jpg`}
+            pageImgWidth={1280}
+            pageImgHeight={960}
+          ></Seo>
+          <ul className='m-4'>
+            {issues.map((issue: Issue) => (
+              <li key={issue.id.toString()}>
+                <a href={issue.url} target={'_blank'} rel='noreferrer'>
+                  <div className='flex flex-row justify-between items-center text-2xl font-bold border-b'>
+                    <p className=''>{issue.title}</p>
+                    <FaArrowAltCircleRight className='' />
+                  </div>
+                </a>
+                <div className='m-2 overfrow-3'>{issue.body}</div>
+                <div className='m-2'>
+                  {issue.labels.length > 0 &&
+                    issue.labels.map((label: string) => (
+                      <span
+                        key={label}
+                        className={
+                          'rounded-md text-sm p-1 m-1 text-gray-50 ' +
+                          (label == 'bug' ? 'bg-red-500' : 'bg-gray-500')
+                        }
+                      >
+                        {label}
+                      </span>
+                    ))}
                 </div>
-              </a>
-              <div className='m-2 overfrow-3'>{issue.body}</div>
-              <div className='m-2'>
-                {issue.labels.length > 0 &&
-                  issue.labels.map((label: string) => (
-                    <span
-                      key={label}
-                      className={
-                        'rounded-md text-sm p-1 m-1 text-gray-50 ' +
-                        (label == 'bug' ? 'bg-red-500' : 'bg-gray-500')
-                      }
-                    >
-                      {label}
-                    </span>
-                  ))}
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        </Layout>
       </>
     );
   }
