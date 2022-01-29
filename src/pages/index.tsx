@@ -49,13 +49,7 @@ const Home: NextPage = () => {
           <div className='m-2'>
             <h2 className='text-3xl font-bold'>Skill</h2>
             <p className='m-2'>スキルセット</p>
-            <div className='grid grid-cols-4 gap-4 sm:flex'>
-              <SkillSet imagePath='/images/logo/ionicframework-icon.svg'></SkillSet>
-              <SkillSet imagePath='/images/logo/typescript.svg'></SkillSet>
-              <SkillSet imagePath='/images/logo/angular-icon-1.svg'></SkillSet>
-              <SkillSet imagePath='/images/logo/firebase-1.svg'></SkillSet>
-              <SkillSet imagePath='/images/logo/next-js.svg'></SkillSet>
-            </div>
+            <SkillSet></SkillSet>
           </div>
 
           {/* なんか適当に画像 */}
