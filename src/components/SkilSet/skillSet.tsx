@@ -1,12 +1,13 @@
 // import Image from 'next/image';
-import {
-  SiAngular,
-  SiFirebase,
-  SiFlutter,
-  SiIonic,
-  SiNextdotjs,
-  SiTypescript,
-} from 'react-icons/Si';
+// import {
+//   SiAngular,
+//   SiFirebase,
+//   SiFlutter,
+//   SiIonic,
+//   SiNextdotjs,
+//   SiTypescript,
+// } from 'react-icons/Si';
+import { FaGithub } from 'react-icons/fa';
 
 const SkillSet = () => {
   return (
