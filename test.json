@@ -1,0 +1,766 @@
+curl -X "POST" -H "Authorization: Basic ODE5YzBmMzM3NzgwNDk2NmJmZDgxOTNhZTJhZWIyY2U6OGU0NWNhYjIzZjRjNDMwNzgyNTY1ZTA2ZjM0Y2EwNTI=" \
+-d grant_type=client_credentials https://accounts.spotify.com/api/token
+
+アクセストークン
+BQBq44TtIDsTas1i1MhTIkf8i0UqpgeorO_30PN8STFZ-YPLoHDY8UC4mTlrZopqc2NzfX8CKp4PTpUhPsw
+
+curl -H "Authorization: Bearer NgCXRKc...MzYjw"  \
+GET https://api.spotify.com/v1/artists/1O8CSXsPwEqxcoBE360PPO
+
+
+curl -H "Authorization: Bearer BQCiRs-P38EWOJ30EsmUvuN0Dvrs2gV1_Zc56f9P2gfXR_Fk5Or3mXrJKIouciUQS_K8_P-TSfRfnxQYFvA"  \
+GET https://api.spotify.com/v1/me
+https://api.spotify.com/v1/me
+
+curl --request GET \
+  --url https://api.spotify.com/v1/me/top/type \
+  --header 'Authorization: ' \
+  --header 'Content-Type: application/json'
+
+  https://accounts.spotify.com/authorize?client_id=819c0f3377804966bfd8193ae2aeb2ce&response_type=code&redirect_uri=8e45cab23f4c430782565e06f34ca052&scope=user-read-private%20user-read-email&state=34fFs29kd09
+
+  code:Illegal
+
+
+  curl -X "GET" "https://api.spotify.com/v1/me/top/artists"
+  -H "Accept: application/json"
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer BQBq44TtIDsTas1i1MhTIkf8i0UqpgeorO_30PN8STFZ-YPLoHDY8UC4mTlrZopqc2NzfX8CKp4PTpUhPsw"
+
+  curl -H "Authorization: Bearer BQBq44TtIDsTas1i1MhTIkf8i0UqpgeorO_30PN8STFZ-YPLoHDY8UC4mTlrZopqc2NzfX8CKp4PTpUhPsw"  \
+GET https://api.spotify.com/v1/artists/1O8CSXsPwEqxcoBE360PPO
+
+curl -H "Authorization: Bearer BQBq44TtIDsTas1i1MhTIkf8i0UqpgeorO_30PN8STFZ-YPLoHDY8UC4mTlrZopqc2NzfX8CKp4PTpUhPsw"  \
+GET https://api.spotify.com/v1/me
+
+aaaa
+
+{
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/2IUl3m1H1EQ7QfNbNWvgru"
+        },
+        "followers": {
+          "href": null,
+          "total": 614727
+        },
+        "genres": [
+          "j-pop",
+          "japanese soul"
+        ],
+        "href": "https://api.spotify.com/v1/artists/2IUl3m1H1EQ7QfNbNWvgru",
+        "id": "2IUl3m1H1EQ7QfNbNWvgru",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb6defc3bd3e475c6fc9432d5b",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051746defc3bd3e475c6fc9432d5b",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1786defc3bd3e475c6fc9432d5b",
+            "width": 160
+          }
+        ],
+        "name": "Vaundy",
+        "popularity": 73,
+        "type": "artist",
+        "uri": "spotify:artist:2IUl3m1H1EQ7QfNbNWvgru"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/57DlMWmbVIf2ssJ8QBpBau"
+        },
+        "followers": {
+          "href": null,
+          "total": 665316
+        },
+        "genres": [
+          "dream smp",
+          "indie game soundtrack"
+        ],
+        "href": "https://api.spotify.com/v1/artists/57DlMWmbVIf2ssJ8QBpBau",
+        "id": "57DlMWmbVIf2ssJ8QBpBau",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b27324edb22d068eb245a924b7f2",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e0224edb22d068eb245a924b7f2",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d0000485124edb22d068eb245a924b7f2",
+            "width": 64
+          }
+        ],
+        "name": "Toby Fox",
+        "popularity": 76,
+        "type": "artist",
+        "uri": "spotify:artist:57DlMWmbVIf2ssJ8QBpBau"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/6wxfx1yhyqjCPYwwxJktR2"
+        },
+        "followers": {
+          "href": null,
+          "total": 1991874
+        },
+        "genres": [
+          "j-pop",
+          "j-rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6wxfx1yhyqjCPYwwxJktR2",
+        "id": "6wxfx1yhyqjCPYwwxJktR2",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb1d900f42cec4a50f97e59200",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051741d900f42cec4a50f97e59200",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1781d900f42cec4a50f97e59200",
+            "width": 160
+          }
+        ],
+        "name": "King Gnu",
+        "popularity": 75,
+        "type": "artist",
+        "uri": "spotify:artist:6wxfx1yhyqjCPYwwxJktR2"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/6oued35Hkg7GIEXqVfBrQK"
+        },
+        "followers": {
+          "href": null,
+          "total": 48098
+        },
+        "genres": [
+          "j-pop",
+          "japanese alternative rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6oued35Hkg7GIEXqVfBrQK",
+        "id": "6oued35Hkg7GIEXqVfBrQK",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5ebf3699c7505da6d79d28324d4",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174f3699c7505da6d79d28324d4",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178f3699c7505da6d79d28324d4",
+            "width": 160
+          }
+        ],
+        "name": "WurtS",
+        "popularity": 59,
+        "type": "artist",
+        "uri": "spotify:artist:6oued35Hkg7GIEXqVfBrQK"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/38WbKH6oKAZskBhqDFA8Uj"
+        },
+        "followers": {
+          "href": null,
+          "total": 998072
+        },
+        "genres": [
+          "j-pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/38WbKH6oKAZskBhqDFA8Uj",
+        "id": "38WbKH6oKAZskBhqDFA8Uj",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5ebb38a96d85b0580670123280e",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174b38a96d85b0580670123280e",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178b38a96d85b0580670123280e",
+            "width": 160
+          }
+        ],
+        "name": "ずっと真夜中でいいのに。",
+        "popularity": 66,
+        "type": "artist",
+        "uri": "spotify:artist:38WbKH6oKAZskBhqDFA8Uj"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/2llRPLPOCvnAiUozItvPsU"
+        },
+        "followers": {
+          "href": null,
+          "total": 46789
+        },
+        "genres": [
+          "j-pop",
+          "j-rock",
+          "japanese alternative rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/2llRPLPOCvnAiUozItvPsU",
+        "id": "2llRPLPOCvnAiUozItvPsU",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eba003bfab2cab74dd2c051027",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174a003bfab2cab74dd2c051027",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178a003bfab2cab74dd2c051027",
+            "width": 160
+          }
+        ],
+        "name": "PEOPLE 1",
+        "popularity": 54,
+        "type": "artist",
+        "uri": "spotify:artist:2llRPLPOCvnAiUozItvPsU"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/45ft4DyTCEJfQwTBHXpdhM"
+        },
+        "followers": {
+          "href": null,
+          "total": 307968
+        },
+        "genres": [
+          "j-pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/45ft4DyTCEJfQwTBHXpdhM",
+        "id": "45ft4DyTCEJfQwTBHXpdhM",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb3ceb0f43750e357075eb7f93",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051743ceb0f43750e357075eb7f93",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1783ceb0f43750e357075eb7f93",
+            "width": 160
+          }
+        ],
+        "name": "milet",
+        "popularity": 67,
+        "type": "artist",
+        "uri": "spotify:artist:45ft4DyTCEJfQwTBHXpdhM"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/4uJKSLGvdvinobijrcfKw4"
+        },
+        "followers": {
+          "href": null,
+          "total": 24407
+        },
+        "genres": [
+          "japanese alternative rock",
+          "japanese r&b",
+          "japanese soul"
+        ],
+        "href": "https://api.spotify.com/v1/artists/4uJKSLGvdvinobijrcfKw4",
+        "id": "4uJKSLGvdvinobijrcfKw4",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb324a767d48d227cc42c2a69f",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174324a767d48d227cc42c2a69f",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178324a767d48d227cc42c2a69f",
+            "width": 160
+          }
+        ],
+        "name": "chilldspot",
+        "popularity": 46,
+        "type": "artist",
+        "uri": "spotify:artist:4uJKSLGvdvinobijrcfKw4"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0GZ65zwBwkkwGNJ3zagtTZ"
+        },
+        "followers": {
+          "href": null,
+          "total": 116178
+        },
+        "genres": [
+          "japanese electropop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0GZ65zwBwkkwGNJ3zagtTZ",
+        "id": "0GZ65zwBwkkwGNJ3zagtTZ",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb31a490fc4ca599aa88d8b006",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab6761610000517431a490fc4ca599aa88d8b006",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f17831a490fc4ca599aa88d8b006",
+            "width": 160
+          }
+        ],
+        "name": "millennium parade",
+        "popularity": 59,
+        "type": "artist",
+        "uri": "spotify:artist:0GZ65zwBwkkwGNJ3zagtTZ"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/7n2wHs1TKAczGzO7Dd2rGr"
+        },
+        "followers": {
+          "href": null,
+          "total": 36286166
+        },
+        "genres": [
+          "canadian pop",
+          "dance pop",
+          "pop",
+          "viral pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/7n2wHs1TKAczGzO7Dd2rGr",
+        "id": "7n2wHs1TKAczGzO7Dd2rGr",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb92df88d91dc5a20ed4859963",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab6761610000517492df88d91dc5a20ed4859963",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f17892df88d91dc5a20ed4859963",
+            "width": 160
+          }
+        ],
+        "name": "ショーン・メンデス",
+        "popularity": 89,
+        "type": "artist",
+        "uri": "spotify:artist:7n2wHs1TKAczGzO7Dd2rGr"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/67dtSHfEqrggSaOaicpaXq"
+        },
+        "followers": {
+          "href": null,
+          "total": 25014
+        },
+        "genres": [
+          "vocaloid"
+        ],
+        "href": "https://api.spotify.com/v1/artists/67dtSHfEqrggSaOaicpaXq",
+        "id": "67dtSHfEqrggSaOaicpaXq",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb3325c4d8df63314bc242875c",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051743325c4d8df63314bc242875c",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1783325c4d8df63314bc242875c",
+            "width": 160
+          }
+        ],
+        "name": "水槽",
+        "popularity": 48,
+        "type": "artist",
+        "uri": "spotify:artist:67dtSHfEqrggSaOaicpaXq"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/2aoUBwmHWln0JSEZbi9E70"
+        },
+        "followers": {
+          "href": null,
+          "total": 42280
+        },
+        "genres": [
+          "j-pop",
+          "japanese teen pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/2aoUBwmHWln0JSEZbi9E70",
+        "id": "2aoUBwmHWln0JSEZbi9E70",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb73846b9437acd634586753b4",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab6761610000517473846b9437acd634586753b4",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f17873846b9437acd634586753b4",
+            "width": 160
+          }
+        ],
+        "name": "にしな",
+        "popularity": 52,
+        "type": "artist",
+        "uri": "spotify:artist:2aoUBwmHWln0JSEZbi9E70"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1EowJ1WwkMzkCkRomFhui7"
+        },
+        "followers": {
+          "href": null,
+          "total": 2681630
+        },
+        "genres": [
+          "j-pop",
+          "j-poprock",
+          "j-rock",
+          "japanese emo",
+          "visual kei"
+        ],
+        "href": "https://api.spotify.com/v1/artists/1EowJ1WwkMzkCkRomFhui7",
+        "id": "1EowJ1WwkMzkCkRomFhui7",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb6755550137cbb7974ea87363",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051746755550137cbb7974ea87363",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1786755550137cbb7974ea87363",
+            "width": 160
+          }
+        ],
+        "name": "RADWIMPS",
+        "popularity": 72,
+        "type": "artist",
+        "uri": "spotify:artist:1EowJ1WwkMzkCkRomFhui7"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/5Vo1hnCRmCM6M4thZCInCj"
+        },
+        "followers": {
+          "href": null,
+          "total": 4191972
+        },
+        "genres": [
+          "anime",
+          "anime rock",
+          "j-pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/5Vo1hnCRmCM6M4thZCInCj",
+        "id": "5Vo1hnCRmCM6M4thZCInCj",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb092745f452dbfc2324076290",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174092745f452dbfc2324076290",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178092745f452dbfc2324076290",
+            "width": 160
+          }
+        ],
+        "name": "Official髭男dism",
+        "popularity": 75,
+        "type": "artist",
+        "uri": "spotify:artist:5Vo1hnCRmCM6M4thZCInCj"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/6nu39YK7u99qv6JdygWuxG"
+        },
+        "followers": {
+          "href": null,
+          "total": 11481
+        },
+        "genres": [
+          "japanese alternative pop",
+          "japanese alternative rock",
+          "kansai indie"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6nu39YK7u99qv6JdygWuxG",
+        "id": "6nu39YK7u99qv6JdygWuxG",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5ebcb93b16f569a07f88ae17eab",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174cb93b16f569a07f88ae17eab",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178cb93b16f569a07f88ae17eab",
+            "width": 160
+          }
+        ],
+        "name": "POP ART TOWN",
+        "popularity": 38,
+        "type": "artist",
+        "uri": "spotify:artist:6nu39YK7u99qv6JdygWuxG"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/3Nrfpe0tUJi4K4DXYWgMUX"
+        },
+        "followers": {
+          "href": null,
+          "total": 44925692
+        },
+        "genres": [
+          "k-pop",
+          "k-pop boy group"
+        ],
+        "href": "https://api.spotify.com/v1/artists/3Nrfpe0tUJi4K4DXYWgMUX",
+        "id": "3Nrfpe0tUJi4K4DXYWgMUX",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb82a5d58059f81867b871d8b6",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab6761610000517482a5d58059f81867b871d8b6",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f17882a5d58059f81867b871d8b6",
+            "width": 160
+          }
+        ],
+        "name": "BTS",
+        "popularity": 96,
+        "type": "artist",
+        "uri": "spotify:artist:3Nrfpe0tUJi4K4DXYWgMUX"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0ykZILVRZgnmdTi0opgb2f"
+        },
+        "followers": {
+          "href": null,
+          "total": 25611
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/0ykZILVRZgnmdTi0opgb2f",
+        "id": "0ykZILVRZgnmdTi0opgb2f",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb9117ea22f0b0d01609810efa",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051749117ea22f0b0d01609810efa",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1789117ea22f0b0d01609810efa",
+            "width": 160
+          }
+        ],
+        "name": "BGM channel",
+        "popularity": 59,
+        "type": "artist",
+        "uri": "spotify:artist:0ykZILVRZgnmdTi0opgb2f"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0jiQYnVYWkQ76bTIgwVTmq"
+        },
+        "followers": {
+          "href": null,
+          "total": 1396
+        },
+        "genres": [
+          "russian classical piano"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0jiQYnVYWkQ76bTIgwVTmq",
+        "id": "0jiQYnVYWkQ76bTIgwVTmq",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb63cc16aa19e37d62d8979f44",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab6761610000517463cc16aa19e37d62d8979f44",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f17863cc16aa19e37d62d8979f44",
+            "width": 160
+          }
+        ],
+        "name": "イリーナ・メジューエワ",
+        "popularity": 34,
+        "type": "artist",
+        "uri": "spotify:artist:0jiQYnVYWkQ76bTIgwVTmq"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1m9ZvxLFfX9avls54a0y40"
+        },
+        "followers": {
+          "href": null,
+          "total": 85992
+        },
+        "genres": [
+          "anime"
+        ],
+        "href": "https://api.spotify.com/v1/artists/1m9ZvxLFfX9avls54a0y40",
+        "id": "1m9ZvxLFfX9avls54a0y40",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5ebcf1248b520c9fadafe47a07b",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174cf1248b520c9fadafe47a07b",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178cf1248b520c9fadafe47a07b",
+            "width": 160
+          }
+        ],
+        "name": "Belle",
+        "popularity": 62,
+        "type": "artist",
+        "uri": "spotify:artist:1m9ZvxLFfX9avls54a0y40"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1McMsnEElThX1knmY4oliG"
+        },
+        "followers": {
+          "href": null,
+          "total": 13222022
+        },
+        "genres": [
+          "pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/1McMsnEElThX1knmY4oliG",
+        "id": "1McMsnEElThX1knmY4oliG",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb8885ead433869bbbe56dd2da",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051748885ead433869bbbe56dd2da",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1788885ead433869bbbe56dd2da",
+            "width": 160
+          }
+        ],
+        "name": "Olivia Rodrigo",
+        "popularity": 91,
+        "type": "artist",
+        "uri": "spotify:artist:1McMsnEElThX1knmY4oliG"
+      }
+    ],
+    "total": 50,
+    "limit": 20,
+    "offset": 0,
+    "href": "https://api.spotify.com/v1/me/top/artists",
+    "previous": null,
+    "next": "https://api.spotify.com/v1/me/top/artists?limit=20&offset=20"
+  }
