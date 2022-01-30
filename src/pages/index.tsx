@@ -54,17 +54,10 @@ const Home: NextPage = () => {
           {/* Spotify */}
           <div className='m-2'>
             <h2 className='text-3xl font-bold'>Spotify</h2>
-            <p className='m-2'>2021のプレイリスト</p>
-            <iframe
-              className='rounded-xl'
-              src='https://open.spotify.com/embed/playlist/6T3HukAcMyOEg5sxWblbks?utm_source=generator&theme=0'
-              width='100%'
-              height='380'
-              frameBorder='0'
-              allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
-            ></iframe>
+            <Link href={'/spotify'}>
+              <a className='p-4'>spotify</a>
+            </Link>
           </div>
-
           {/* なんか適当に画像 */}
           <div className='m-2'>
             <h2 className='text-3xl font-bold'>Images</h2>

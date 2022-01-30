@@ -19,7 +19,6 @@ const returnTop = () => {
 const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
   const router = useRouter();
   const pathName = router.pathname;
-  console.log(pathName);
   return (
     <>
       {
