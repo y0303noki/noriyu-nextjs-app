@@ -14,8 +14,8 @@ const baseUrl = process.env.NEXT_PUBLIC_HOST;
 const Spotify = () => {
   const [isExpand2020, setIsExpand2020] = useState(false);
   const [isExpand2021, setIsExpand2021] = useState(false);
-  const contentClassname2020 = isExpand2020 ? '600' : '200';
-  const contentClassname2021 = isExpand2021 ? '600' : '200';
+  const contentClassname2020 = isExpand2020 ? '600' : '100';
+  const contentClassname2021 = isExpand2021 ? '600' : '100';
   const buttonName2020 = isExpand2020 ? '閉じる' : 'もっとみる';
   const buttonName2021 = isExpand2021 ? '閉じる' : 'もっとみる';
 
@@ -31,7 +31,7 @@ const Spotify = () => {
           pageImgHeight={960}
         ></Seo>
       </Layout>
-      <p>2021</p>
+      <p className='p-2 text-2xl font-bold'>2021</p>
       <iframe
         className='p-2'
         src='https://open.spotify.com/embed/playlist/37i9dQZF1EUMDoJuT8yJsl'
@@ -42,7 +42,7 @@ const Spotify = () => {
       <p className='px-2 text-right' onClick={() => setIsExpand2021(!isExpand2021)}>
         {buttonName2021}
       </p>
-      <p>2020</p>
+      <p className='p-2 text-2xl font-bold'>2020</p>
       <iframe
         className='p-2'
         src='https://open.spotify.com/embed/playlist/37i9dQZF1EM6hTgxpQrzmx'
