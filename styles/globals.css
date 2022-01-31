@@ -24,6 +24,14 @@
   overflow: hidden;
 }
 
+.min-h-20 {
+  min-height: 5rem;
+}
+
+.min-w-20 {
+  min-width: 5rem;
+}
+
 .min-h-24 {
   min-height: 6rem;
 }
