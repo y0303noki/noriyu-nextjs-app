@@ -44,6 +44,7 @@ const Seo: VFC<MetaData> = ({
         href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap'
         rel='stylesheet'
       />
+
       <link rel='canonical' href={url} />
     </Head>
   );
