@@ -18,7 +18,7 @@ const BlogLink = ({ blog }: { blog: Blog }) => {
     <Link href={`/blog/${blog.id}`}>
       <a className=' font-bold'>
         <div className='flex flex-row'>
-          <div className='bg-gray-300 bg-opacity-50 w-20 h-20 rounded-2xl flex items-center justify-center'>
+          <div className='bg-gray-300 bg-opacity-50 w-20 h-20 min-w-20 min-h-20 rounded-2xl flex items-center justify-center'>
             <div className='text-center mt-1'>
               {' '}
               <CustomEmoji icon={icon}></CustomEmoji>
