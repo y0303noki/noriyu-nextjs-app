@@ -27,7 +27,7 @@ const ZasetuApp = () => {
   };
   return (
     <>
-      <ul className='grid grid-cols-2'>
+      <ul className='grid grid-cols-2 sm:grid-cols-3'>
         <li>
           <AppCard appCard={minwariApp}></AppCard>
         </li>

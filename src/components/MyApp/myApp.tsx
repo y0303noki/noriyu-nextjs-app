@@ -14,7 +14,7 @@ const MyApp = () => {
   };
   return (
     <>
-      <ul className='grid grid-cols-2'>
+      <ul className='grid grid-cols-2 sm:grid-cols-3'>
         <li>
           <AppCard appCard={appInfo}></AppCard>
         </li>
