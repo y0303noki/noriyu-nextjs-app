@@ -55,7 +55,7 @@ const Home: NextPage = () => {
           <div className='m-2'>
             <h2 className='text-3xl font-bold'>Spotify</h2>
             <Link href={'/spotify'}>
-              <a className='p-4'>spotify</a>
+              <a className='p-4 underline text-blue-400'>spotify</a>
             </Link>
           </div>
           {/* なんか適当に画像 */}

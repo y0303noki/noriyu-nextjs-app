@@ -34,7 +34,7 @@ const MyDocument = () => {
           </>
         )}
       </Head>
-      <body className='dark:bg-gray-800'>
+      <body className='bg-gray-200 dark:bg-gray-800'>
         <Main />
         <NextScript />
       </body>

@@ -1,95 +1,104 @@
 //  AppCardのコンポーネント
 import Image from 'next/image';
 import { FaAppStore, FaGithub } from 'react-icons/fa';
+import { appInfo } from '../../types/appInfo';
+import React, { useState } from 'react';
 
-const AppCard = ({
-  appName,
-  appDescription,
-  iconPath = '',
-  tags,
-  webUrl = '',
-  githubUrl = '',
-  appStoreUrl = '',
-  zasetuReason = '',
-}: {
-  appName: string;
-  appDescription: string;
-  iconPath?: string;
-  tags: string[];
-  webUrl?: string;
-  githubUrl?: string;
-  appStoreUrl?: string;
-  zasetuReason?: string;
-}) => {
+const AppCard = ({ appCard }: { appCard: appInfo }) => {
+  const [zasetuShow, setZasetuShow] = useState(false);
+
   // 挫折アプリなら理由が含まれている
-  const isZasetApp = zasetuReason != '';
+  const isZasetApp = appCard.zasetuReason != '';
   const logoWidth = 40;
 
   // アプリのアイコン　なければ表示しない
   const appIcon = (
     <div className='ml-4 h-24 w-24  min-h-24 min-w-24'>
-      <Image height={80} width={80} src={iconPath} alt='My avatar' className='rounded-2xl' />
+      <Image
+        height={80}
+        width={80}
+        src={appCard.iconPath}
+        alt='My avatar'
+        className='rounded-2xl'
+      />
     </div>
   );
   return (
-    <div className='flex flex-col h-full m-4 min-w-max w-96 '>
-      <div className=' max-w-80 shadow-lg dark:bg-gray-600'>
-        <div className='flex flex-row pt-4'>
-          {iconPath && appIcon}
-          <div className='ml-4'>
-            <div className='font-bold text-xl mb-2'>{appName}</div>
-            <p className='text-base mx-2 text-gray-700 dark:text-gray-200'>{appDescription}</p>
+    <>
+      <div className='flex flex-col rounded-2xl bg-blue-100 mx-1'>
+        {/* アイコン、あれば */}
+        {appCard.iconPath && (
+          <div className='mx-auto mt-2'>
+            <Image
+              height={80}
+              width={80}
+              src={appCard.iconPath}
+              alt='My App'
+              className='rounded-2xl'
+            />
           </div>
-        </div>
-        <ul className='m-2'>
-          {/* <li className='inline-block px-4'>
-            {webUrl != '' && (
-              <a className='h-4 ml-2' href={webUrl} target={'_blank'} rel='noreferrer'>
-                <Image
-                  src='/images/logo/web-icon.png'
-                  alt='web Logo'
-                  width={logoWidth}
-                  height={logoWidth}
-                />
-              </a>
-            )}
-          </li> */}
-          <li className='inline-block px-4'>
-            <a href={githubUrl} target='_blank' rel='noopener noreferrer' className='w-4'>
-              <FaGithub size={40}></FaGithub>
-            </a>
-          </li>
-          <li className='inline-block px-4'>
-            <a href={appStoreUrl} target='_blank' rel='noopener noreferrer' className='w-4'>
-              <FaAppStore size={40}></FaAppStore>
-            </a>
-          </li>
-        </ul>
-
-        {/* 挫折理由 */}
-        {isZasetApp && (
-          <>
-            <p className='ml-4'>挫折理由</p>
-            <div className='bg-gray-200 dark:bg-gray-700 rounded-2xl m-2 p-4 text-sm'>
-              {zasetuReason}
-            </div>
-          </>
         )}
+        {/* アプリの名前 */}
+        <div className='text-center font-bold dark:text-black'>{appCard.name}</div>
+        {/* アプリの場所 */}
+        <ul className='p-1 bg-white dark:bg-gray-500'>
+          {appCard.githubUrl && (
+            <li className='inline-block px-4'>
+              <a href={appCard.githubUrl} target='_blank' rel='noopener noreferrer' className='w-4'>
+                <FaGithub size={20}></FaGithub>
+              </a>
+            </li>
+          )}
+          {appCard.appStoreUrl && (
+            <li className='inline-block px-4'>
+              <a
+                href={appCard.appStoreUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='w-4'
+              >
+                <FaAppStore size={20}></FaAppStore>
+              </a>
+            </li>
+          )}
+        </ul>
+        {/* 説明 */}
+        <div className='bg-white dark:bg-gray-500 px-1 text-sm '>
+          <p className='m-2'>{appCard.appDescription}</p>
+        </div>
+
         {/* タグ */}
-        <div className='px-6 pt-4 pb-2'>
-          {tags.map((tag: string) => (
+        <div className={'px-1 bg-white dark:bg-gray-500 ' + (isZasetApp ? '' : 'rounded-b-2xl')}>
+          {appCard.tags.map((tag: string) => (
             <span
               key={tag}
-              className={
-                'inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200 mr-2 mb-2 '
-              }
+              className={'inline-block rounded text-xs m-1 px-1 bg-gray-300 dark:bg-gray-700'}
             >
-              #{tag}
+              {tag}
             </span>
           ))}
         </div>
+        {/* 挫折理由 */}
+        {isZasetApp && (
+          <div className={'bg-white dark:bg-gray-500 ' + 'rounded-b-2xl'}>
+            <p
+              className={'text-xs text-right px-1 pt-1'}
+              onClick={() => setZasetuShow(!zasetuShow)}
+            >
+              {!zasetuShow ? '挫折理由 ▼' : '挫折理由 ▲'}
+            </p>
+            {zasetuShow && (
+              <p
+                className='border-t-2 text-gray-600 dark:text-white p-1 text-sm'
+                onClick={() => setZasetuShow(!zasetuShow)}
+              >
+                {appCard.zasetuReason}
+              </p>
+            )}
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 };
 
