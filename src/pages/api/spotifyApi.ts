@@ -11,7 +11,7 @@ export class SpotifyApi {
 
   private timeRangeShort = 'short_term';
   private type = 'tracks'; // artists or tracks
-  private meTopArtistUrl = `https://api.spotify.com/v1/me/top/${this.type}?time_range=${this.timeRangeShort}`;
+  private meTopArtistUrl = `https://api.spotify.com/v1/me/top/artists?time_range=${this.timeRangeShort}&limit=50`;
   private meTopTraksUrl = `https://api.spotify.com/v1/me/top/tracks?time_range=${this.timeRangeShort}&limit=50`;
   private accessToken = '';
 
@@ -56,6 +56,40 @@ export class SpotifyApi {
 
     this.accessToken = result;
     return result;
+  }
+
+  // ユーザーのTop Artist取得
+  public async getTopArtistByUser(): Promise<SpotifyTopArtist[]> {
+    let items: SpotifyTopArtist[];
+    const header = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.accessToken}`,
+    };
+
+    return await axios
+      .get(`${this.meTopArtistUrl}`, { headers: header })
+      .then((res: any) => {
+        // console.log(res.data.items[0]);
+        items = res.data.items.map((item: any) => {
+          const imageUrl = item.images?.length
+            ? item.images[item.images.length - 1].url
+            : 'noimage';
+          const info: SpotifyTopArtist = {
+            id: item.id,
+            name: item.name,
+            artist_url: item.external_urls?.spotify,
+            image_url: imageUrl,
+          };
+          return info;
+        });
+        return items;
+      })
+      .catch((error: any) => {
+        console.log('ERROR getTopTracksByUser');
+        console.error(error);
+        return error.response.data;
+      });
   }
 
   // ユーザーのTop Tracks取得
