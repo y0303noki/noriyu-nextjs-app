@@ -29,44 +29,44 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
               <li
                 className={
                   (pathName == '/' ? 'text-blue-400 font-bold border-b-4 border-blue-400 ' : '') +
-                  'p-4 list-none'
+                  'px-2 py-4 list-none'
                 }
               >
                 <Link href={'/'}>
-                  <a className='p-4'>Home</a>
+                  <a className='p-2'>Home</a>
                 </Link>
               </li>
               <li
                 className={
                   (pathName == '/blog'
                     ? 'text-blue-400 font-bold border-b-4 border-blue-400 '
-                    : '') + 'p-4 list-none'
+                    : '') + 'px-2 py-4 list-none'
                 }
               >
                 <Link href={'/blog'}>
-                  <a className='p-4'>Blog</a>
+                  <a className='p-2'>Blog</a>
                 </Link>
               </li>
               <li
                 className={
                   (pathName == '/kaizen'
                     ? 'text-blue-400 font-bold border-b-4 border-blue-400 '
-                    : '') + 'p-4 list-none'
+                    : '') + 'px-2 py-4 list-none'
                 }
               >
                 <Link href={'/kaizen'}>
-                  <a className='p-4'>Kaizen</a>
+                  <a className='p-2'>Kaizen</a>
                 </Link>
               </li>
               <li
                 className={
                   (pathName.indexOf('/spotify') !== -1
                     ? 'text-blue-400 font-bold border-b-4 border-blue-400 '
-                    : '') + 'p-4 list-none'
+                    : '') + 'px-2 py-4 list-none'
                 }
               >
                 <Link href={'/spotify/myTopTraks'}>
-                  <a className='p-4'>Spotify</a>
+                  <a className='p-2'>Spotify</a>
                 </Link>
               </li>
             </ul>
