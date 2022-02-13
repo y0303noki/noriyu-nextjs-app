@@ -1,6 +1,7 @@
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import { useState } from 'react';
+import Link from 'next/link';
 
 //  // フォームに入力された値をtodoに登録するまでに入れておくためのstate
 //  const [tmpTodo, setTmpTodo] = useState("");
@@ -31,6 +32,12 @@ const Spotify = () => {
           pageImgHeight={960}
         ></Seo>
       </Layout>
+      <Link href={'/spotify/myTopTraks'}>
+        <a className='p-4 underline text-blue-400'>トラック一覧へ</a>
+      </Link>
+      <Link href={'/spotify/myTopArtists'}>
+        <a className='p-4 underline text-blue-400'>アーティスト一覧へ</a>
+      </Link>
       <p className='p-2 text-2xl font-bold'>2021</p>
       <iframe
         className='p-2'

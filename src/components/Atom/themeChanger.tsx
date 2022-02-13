@@ -15,7 +15,7 @@ const ThemeChanger = () => {
         className='block p-1 bg-black dark:bg-white rounded-full ml-auto'
         onClick={handleSetTheme}
       >
-        {theme === 'light' ? (
+        {theme === 'light' || !theme ? (
           <FaMoon className='w-5 h-5 text-white' />
         ) : (
           <FaSun className='w-5 h-5 text-black' />

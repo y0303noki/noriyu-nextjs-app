@@ -58,6 +58,17 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
                   <a className='p-4'>Kaizen</a>
                 </Link>
               </li>
+              <li
+                className={
+                  (pathName.indexOf('/spotify') !== -1
+                    ? 'text-blue-400 font-bold border-b-4 border-blue-400 '
+                    : '') + 'p-4 list-none'
+                }
+              >
+                <Link href={'/spotify/myTopTraks'}>
+                  <a className='p-4'>Spotify</a>
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -78,7 +89,7 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
                 <p className='text-5xl text-center lg:text-left'>{name}</p>
                 <p className='max-w-sm p-4'>{selfIntroduction}</p>
                 <ul className='text-center'>
-                  <li className='inline-block px-4'>
+                  <li className='inline-block px-4 hover:opacity-50'>
                     <a
                       href={'https://www.instagram.com/noriyu_tataero'}
                       target='_blank'
@@ -94,7 +105,7 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
                       url={'https://www.instagram.com/noriyu_tataero'}
                     ></SnsLink> */}
                   </li>
-                  <li className='inline-block px-4'>
+                  <li className='inline-block px-4 hover:opacity-50'>
                     <a
                       href={'https://twitter.com/noriyuttey'}
                       target='_blank'
@@ -109,7 +120,7 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
                       url={'https://twitter.com/noriyuttey'}
                     ></SnsLink> */}
                   </li>
-                  <li className='inline-block px-4'>
+                  <li className='inline-block px-4 hover:opacity-50'>
                     <a
                       href={'https://github.com/y0303noki'}
                       target='_blank'

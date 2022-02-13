@@ -26,6 +26,10 @@ const MyTopTraks = ({ infos }: { infos: SpotifyTopTraks[] }) => {
       <Link href={'/spotify/myTopArtists'}>
         <a className='p-4 underline text-blue-400'>アーティスト一覧へ</a>
       </Link>
+      <Link href={'/spotify'}>
+        <a className='p-4 underline text-blue-400'>Best 2022 2021</a>
+      </Link>
+
       <SpotifyDescription title='My Top Traks' titleJa='トップトラック'></SpotifyDescription>
 
       <ul className='m-4 my-1'>
