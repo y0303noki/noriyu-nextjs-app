@@ -77,7 +77,7 @@ export const getServerSideProps: GetStaticProps = async (context) => {
   const res = await fetch(issueUrl);
   const datas = await res.json();
 
-  const issues: Issue[] = datas.map((data: any) => {
+  let issues: Issue[] = datas.map((data: any) => {
     const issue: Issue = {
       id: data.id,
       url: data.html_url,
@@ -93,10 +93,11 @@ export const getServerSideProps: GetStaticProps = async (context) => {
   });
 
   // 必要なissueだけにする
-  issues.filter((issue) => issue.author_association === 'OWNER');
+  issues = issues.filter((issue) => issue.author_association === 'OWNER');
+  issues = issues.filter((issue) => !issue.labels.includes('image'));
 
   // createdAtの降順に並び替え
-  issues.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1));
+  issues = issues.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1));
 
   return { props: { issues: issues } };
 };
