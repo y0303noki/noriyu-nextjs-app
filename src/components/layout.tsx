@@ -142,7 +142,7 @@ const Layout = ({ children, isHome }: { children: any; isHome: boolean }) => {
           )}
         </>
       }
-      <main className=''>{children}</main>
+      <main className='p-4 max-w-4xl m-auto'>{children}</main>
       {/* <div className='text-center mb-4' onClick={returnTop}>
         To Top{' '}
       </div> */}
