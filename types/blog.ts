@@ -10,5 +10,6 @@ export type Blog = Common & {
     height: number;
     width: number;
   };
+  eye_count: number;
   tag: string[];
 };

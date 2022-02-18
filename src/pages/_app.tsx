@@ -5,6 +5,7 @@ import { ThemeProvider } from 'next-themes';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { GA_TRACKING_ID, pageview } from '../../libs/gtag';
+import '../firebase/init'; // Initialize FirebaseApp
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();

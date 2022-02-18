@@ -7,13 +7,22 @@ import { Category } from '../../../types/category';
 import { TwitterShareButton, TwitterIcon } from 'react-share';
 import ReturnTopButton from '../../components/Common/returnTopButton';
 import CustomEmoji from '../../components/Atom/customEmoji';
+import { FC } from 'react';
+import { useBlog, useBlogs } from '../../hooks/useBlogs';
 import 'dayjs/locale/ja';
+import { Emoji } from 'emoji-mart';
 
 dayjs.locale('ja');
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
 
 export default function BlogId({ blog }: { blog: Blog }) {
   const icon = blog.category.length > 0 ? blog.category[0].icon[0] : '';
+  const { isLoading, blog2 } = useBlog();
+  if (isLoading) {
+    console.log('loading');
+  } else {
+    console.log(blog2);
+  }
   return (
     <Layout isHome={false}>
       <Seo
@@ -24,6 +33,11 @@ export default function BlogId({ blog }: { blog: Blog }) {
         pageImgWidth={1280}
         pageImgHeight={960}
       ></Seo>
+      {/* <ul>
+        {blogs.map((blog) => (
+          <li key={blog.id}>{blog.eye_count}</li>
+        ))}
+      </ul> */}
       <p className='text-gray-400 m-2 text-center'>
         {dayjs(blog.publishedAt).format('YYYY年MM月DD日 (dd)')}
       </p>
@@ -55,6 +69,11 @@ export default function BlogId({ blog }: { blog: Blog }) {
           __html: `${blog.body}`,
         }}
       />
+      <div>
+        <button>
+          <Emoji emoji={'smile'} size={64}></Emoji>
+        </button>
+      </div>
 
       <div className='text-center'>
         <ReturnTopButton></ReturnTopButton>
