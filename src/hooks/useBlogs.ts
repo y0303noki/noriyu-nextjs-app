@@ -7,6 +7,10 @@ export type UseBlogsOutput = {
   blogs: Blog[];
 };
 
+// export type UseBlogsOutput3 = Blog {
+
+// }
+
 export type UseBlogsOutput2 = {
   isLoading: boolean;
   blog2: Blog | null;
