@@ -1,14 +1,9 @@
 import { Category } from './category';
-import { Common } from './common';
+import { microCmsCommon } from './microCmsCommon';
 
-export type Blog = Common & {
+export type Blog = microCmsCommon & {
   title: string;
   body: string;
   category: Category[];
-  eye_catch: {
-    url: string;
-    height: number;
-    width: number;
-  };
   tag: string[];
 };
