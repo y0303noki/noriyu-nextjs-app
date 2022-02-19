@@ -3,6 +3,10 @@
 import axios from 'axios';
 import { SpotifyTopArtist } from '../../../types/spotify_top_artist';
 import { SpotifyTopTraks } from '../../../types/spotify_top_traks';
+import dayjs from 'dayjs';
+import timezone from 'dayjs/plugin/timezone';
+import { SpotifyTopArtistInfo } from '../../../types/spotifyTopArtistInfo';
+import { SpotifyTopTrakInfo } from '../../../types/spotifyTopTrakInfo';
 
 export class SpotifyApi {
   private client_id = process.env.SPOTIFY_CLIENT_ID;
@@ -23,13 +27,10 @@ export class SpotifyApi {
     Authorization: '',
   };
 
-  //   constructor() {
-  //     this.accessToken = localStorage.getItem('accessToken');
-  //     this.headers = {
-  //       'Content-Type': 'application/json',
-  //       Authorization: `Bearer ${this.accessToken}`,
-  //     };
-  //     this.userId = null;
+  constructor() {
+    dayjs.extend(timezone);
+    dayjs.tz.setDefault('Asia/Tokyo');
+  }
 
   // refresh_tokenを利用してasscess_tokenを取得する
   async getAccessToken(): Promise<string> {
@@ -59,8 +60,14 @@ export class SpotifyApi {
   }
 
   // ユーザーのTop Artist取得
-  public async getTopArtistByUser(): Promise<SpotifyTopArtist[]> {
+  public async getTopArtistByUser(): Promise<SpotifyTopArtistInfo> {
     let items: SpotifyTopArtist[];
+    const lastUpdatedAt = dayjs().format('YYYY-MM-DD');
+
+    let result: SpotifyTopArtistInfo = {
+      lastUpdateAt: lastUpdatedAt,
+      spotifyTopArtist: [],
+    };
     const header = {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -83,7 +90,8 @@ export class SpotifyApi {
           };
           return info;
         });
-        return items;
+        result.spotifyTopArtist = items;
+        return result;
       })
       .catch((error: any) => {
         console.log('ERROR getTopTracksByUser');
@@ -93,8 +101,14 @@ export class SpotifyApi {
   }
 
   // ユーザーのTop Tracks取得
-  async getTopTracksByUser(): Promise<SpotifyTopTraks[]> {
+  async getTopTracksByUser(): Promise<SpotifyTopTrakInfo> {
     let items: SpotifyTopTraks[];
+    const lastUpdatedAt = dayjs().format('YYYY-MM-DD');
+
+    let result: SpotifyTopTrakInfo = {
+      lastUpdateAt: lastUpdatedAt,
+      spotifyTopArtist: [],
+    };
 
     const header = {
       Accept: 'application/json',
@@ -120,7 +134,8 @@ export class SpotifyApi {
           };
           return info;
         });
-        return items;
+        result.spotifyTopArtist = items;
+        return result;
       })
       .catch((error: any) => {
         console.log('ERROR getTopTracksByUser');

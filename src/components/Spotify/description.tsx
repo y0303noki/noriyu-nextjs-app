@@ -1,4 +1,15 @@
-const SpotifyDescription = ({ title, titleJa }: { title: string; titleJa: string }) => {
+import dayjs from 'dayjs';
+import timezone from 'dayjs/plugin/timezone';
+
+const SpotifyDescription = ({
+  title,
+  titleJa,
+  lastUpdateAt,
+}: {
+  title: string;
+  titleJa: string;
+  lastUpdateAt: string;
+}) => {
   return (
     <>
       <p className='mx-4 text-5xl font-bold'>{title}</p>
@@ -10,9 +21,10 @@ const SpotifyDescription = ({ title, titleJa }: { title: string; titleJa: string
         >
           Spotify API
         </a>
-        を利用しています。<br></br>
-        ビルドのタイミングで取得し直しているためリアルタイムではありません。
-        また、順番は何が基準かドキュメントに記載されていないためわかりません。
+        を利用しています。
+        <div className='text-gray-500 text-center'>
+          last update <span>{lastUpdateAt}</span>
+        </div>
       </div>
     </>
   );

@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { SpotifyTopArtistInfo } from '../../../types/spotifyTopArtistInfo';
 import { SpotifyTopArtist } from '../../../types/spotify_top_artist';
 import { SpotifyTopTraks } from '../../../types/spotify_top_traks';
 import Layout from '../../components/layout';
@@ -10,7 +11,7 @@ import SpotifyDescription from '../../components/Spotify/description';
 import { SpotifyApi } from '../api/spotifyApi';
 
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
-const MyTopArtists = ({ infos }: { infos: SpotifyTopArtist[] }) => {
+const MyTopArtists = ({ infos }: { infos: SpotifyTopArtistInfo }) => {
   return (
     <>
       <Layout isHome={false}>
@@ -32,10 +33,11 @@ const MyTopArtists = ({ infos }: { infos: SpotifyTopArtist[] }) => {
         <SpotifyDescription
           title='My Top Artists'
           titleJa='トップアーティスト'
+          lastUpdateAt={infos.lastUpdateAt}
         ></SpotifyDescription>
 
         <ul className='m-4 my-1'>
-          {infos.map((info: SpotifyTopArtist, index: number) => (
+          {infos.spotifyTopArtist.map((info: SpotifyTopArtist, index: number) => (
             <li key={info.id}>
               <a href={info.artist_url} target={'_blank'} rel='noreferrer'>
                 <div className='flex flex-row m-2 justify-between'>
@@ -67,7 +69,7 @@ export default MyTopArtists;
 // ビルド時にspotifyリスト更新する
 export const getStaticProps: GetStaticProps = async () => {
   const api = new SpotifyApi();
-  let result: SpotifyTopArtist[] = [];
+  let result: SpotifyTopArtistInfo | null = null;
 
   const token = await api.getAccessToken();
   if (token != 'ERROR getAccsessToken') {
