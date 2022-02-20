@@ -62,7 +62,7 @@ export class SpotifyApi {
   // ユーザーのTop Artist取得
   public async getTopArtistByUser(): Promise<SpotifyTopArtistInfo> {
     let items: SpotifyTopArtist[];
-    const lastUpdatedAt = dayjs().format('YYYY-MM-DD');
+    const lastUpdatedAt = dayjs().format('YYYY-MM-DD HH:mm');
 
     let result: SpotifyTopArtistInfo = {
       lastUpdateAt: lastUpdatedAt,
@@ -103,7 +103,7 @@ export class SpotifyApi {
   // ユーザーのTop Tracks取得
   async getTopTracksByUser(): Promise<SpotifyTopTrakInfo> {
     let items: SpotifyTopTraks[];
-    const lastUpdatedAt = dayjs().format('YYYY-MM-DD');
+    const lastUpdatedAt = dayjs().format('YYYY-MM-DD HH:mm');
 
     let result: SpotifyTopTrakInfo = {
       lastUpdateAt: lastUpdatedAt,
