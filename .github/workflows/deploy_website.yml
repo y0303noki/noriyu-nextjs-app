@@ -7,7 +7,7 @@ on:
         default: 'main'
         required: true
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/10 * * * *'
 jobs:
   deploy:
     runs-on: ubuntu-latest
