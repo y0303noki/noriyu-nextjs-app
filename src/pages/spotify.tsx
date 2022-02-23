@@ -31,35 +31,36 @@ const Spotify = () => {
           pageImgWidth={1280}
           pageImgHeight={960}
         ></Seo>
+
+        <Link href={'/spotify/myTopTraks'}>
+          <a className='p-4 underline text-blue-400'>トラック一覧へ</a>
+        </Link>
+        <Link href={'/spotify/myTopArtists'}>
+          <a className='p-4 underline text-blue-400'>アーティスト一覧へ</a>
+        </Link>
+        <p className='p-2 text-2xl font-bold'>2021</p>
+        <iframe
+          className='p-2'
+          src='https://open.spotify.com/embed/playlist/37i9dQZF1EUMDoJuT8yJsl'
+          width='100%'
+          height={contentClassname2021}
+          allow='encrypted-media'
+        ></iframe>
+        <p className='px-2 text-right' onClick={() => setIsExpand2021(!isExpand2021)}>
+          {buttonName2021}
+        </p>
+        <p className='p-2 text-2xl font-bold'>2020</p>
+        <iframe
+          className='p-2'
+          src='https://open.spotify.com/embed/playlist/37i9dQZF1EM6hTgxpQrzmx'
+          width='100%'
+          height={contentClassname2020}
+          allow='encrypted-media'
+        ></iframe>
+        <p className='px-2 text-right' onClick={() => setIsExpand2020(!isExpand2020)}>
+          {buttonName2020}
+        </p>
       </Layout>
-      <Link href={'/spotify/myTopTraks'}>
-        <a className='p-4 underline text-blue-400'>トラック一覧へ</a>
-      </Link>
-      <Link href={'/spotify/myTopArtists'}>
-        <a className='p-4 underline text-blue-400'>アーティスト一覧へ</a>
-      </Link>
-      <p className='p-2 text-2xl font-bold'>2021</p>
-      <iframe
-        className='p-2'
-        src='https://open.spotify.com/embed/playlist/37i9dQZF1EUMDoJuT8yJsl'
-        width='100%'
-        height={contentClassname2021}
-        allow='encrypted-media'
-      ></iframe>
-      <p className='px-2 text-right' onClick={() => setIsExpand2021(!isExpand2021)}>
-        {buttonName2021}
-      </p>
-      <p className='p-2 text-2xl font-bold'>2020</p>
-      <iframe
-        className='p-2'
-        src='https://open.spotify.com/embed/playlist/37i9dQZF1EM6hTgxpQrzmx'
-        width='100%'
-        height={contentClassname2020}
-        allow='encrypted-media'
-      ></iframe>
-      <p className='px-2 text-right' onClick={() => setIsExpand2020(!isExpand2020)}>
-        {buttonName2020}
-      </p>
     </>
   );
 };

@@ -1,6 +1,6 @@
-import { Common } from './common';
+import { microCmsCommon } from './microCmsCommon';
 
-export type Category = Common & {
+export type Category = microCmsCommon & {
   name: string;
   icon: string[];
 };

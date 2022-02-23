@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { SpotifyTopTrakInfo } from '../../../types/spotifyTopTrakInfo';
 import { SpotifyTopArtist } from '../../../types/spotify_top_artist';
 import { SpotifyTopTraks } from '../../../types/spotify_top_traks';
 import Layout from '../../components/layout';
@@ -10,7 +11,7 @@ import SpotifyDescription from '../../components/Spotify/description';
 import { SpotifyApi } from '../api/spotifyApi';
 
 const baseUrl = process.env.NEXT_PUBLIC_HOST;
-const MyTopTraks = ({ infos }: { infos: SpotifyTopTraks[] }) => {
+const MyTopTraks = ({ infos }: { infos: SpotifyTopTrakInfo }) => {
   return (
     <>
       <Layout isHome={false}>
@@ -22,41 +23,46 @@ const MyTopTraks = ({ infos }: { infos: SpotifyTopTraks[] }) => {
           pageImgWidth={1280}
           pageImgHeight={960}
         ></Seo>
+
+        <Link href={'/spotify/myTopArtists'}>
+          <a className='p-4 underline text-blue-400'>アーティスト一覧へ</a>
+        </Link>
+        <Link href={'/spotify'}>
+          <a className='p-4 underline text-blue-400'>Best 2022 2021</a>
+        </Link>
+
+        <SpotifyDescription
+          title='My Top Traks'
+          titleJa='トップトラック'
+          lastUpdateAt={infos.lastUpdateAt}
+        ></SpotifyDescription>
+
+        <ul className='m-4 my-1'>
+          {infos.spotifyTopArtist.map((info: SpotifyTopTraks, index: number) => (
+            <li key={info.id}>
+              <a href={info.music_url} target={'_blank'} rel='noreferrer'>
+                <div className='flex flex-row m-2 justify-between'>
+                  <p className='items-center pr-2'>{index + 1}</p>
+                  <div className='w-10 h-10'>
+                    <Image
+                      height={40}
+                      width={40}
+                      src={info.image_url}
+                      alt={info.music_name + 'の画像'}
+                      className='object-cover'
+                    />
+                  </div>
+                  <div className='mx-2 grow'>
+                    <p className='font-bold'>{info.music_name} </p>
+                    <p className=''>{info.artist_name} </p>
+                  </div>
+                  <FaArrowAltCircleRight className='mt-auto mb-auto' />
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
       </Layout>
-      <Link href={'/spotify/myTopArtists'}>
-        <a className='p-4 underline text-blue-400'>アーティスト一覧へ</a>
-      </Link>
-      <Link href={'/spotify'}>
-        <a className='p-4 underline text-blue-400'>Best 2022 2021</a>
-      </Link>
-
-      <SpotifyDescription title='My Top Traks' titleJa='トップトラック'></SpotifyDescription>
-
-      <ul className='m-4 my-1'>
-        {infos.map((info: SpotifyTopTraks, index: number) => (
-          <li key={info.id}>
-            <a href={info.music_url} target={'_blank'} rel='noreferrer'>
-              <div className='flex flex-row m-2 justify-between'>
-                <p className='items-center pr-2'>{index + 1}</p>
-                <div className='w-10 h-10'>
-                  <Image
-                    height={40}
-                    width={40}
-                    src={info.image_url}
-                    alt={info.music_name + 'の画像'}
-                    className='object-cover'
-                  />
-                </div>
-                <div className='mx-2 grow'>
-                  <p className='font-bold'>{info.music_name} </p>
-                  <p className=''>{info.artist_name} </p>
-                </div>
-                <FaArrowAltCircleRight className='mt-auto mb-auto' />
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
     </>
   );
 };
@@ -65,7 +71,7 @@ export default MyTopTraks;
 // ビルド時にspotifyリスト更新する
 export const getStaticProps: GetStaticProps = async () => {
   const api = new SpotifyApi();
-  let result: SpotifyTopTraks[] = [];
+  let result: SpotifyTopTrakInfo | null = null;
 
   const token = await api.getAccessToken();
   if (token != 'ERROR getAccsessToken') {

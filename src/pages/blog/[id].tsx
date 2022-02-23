@@ -23,13 +23,15 @@ export default function BlogId({ blog }: { blog: Blog }) {
   } else {
     console.log(blog2);
   }
+  // ogp生成
+  const ogp = `https://res.cloudinary.com/dsutuw237/image/upload/l_text:Sawarabi%20Gothic_50_bold:${blog.title},co_rgb:333,w_500,c_fit/v1645078809/ogp-custom_ogcu3f.png`;
   return (
     <Layout isHome={false}>
       <Seo
         pageTitle={`${blog.title}`}
         pageDescription={`${blog.body}`}
         pagePath={`${baseUrl}/blog/${blog.id}`}
-        pageImg={`${baseUrl}/images/small/my_home_1mb.jpg`}
+        pageImg={ogp}
         pageImgWidth={1280}
         pageImgHeight={960}
       ></Seo>
