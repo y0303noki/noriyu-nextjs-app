@@ -18,7 +18,7 @@ const MyApp = () => {
     iconPath: '/images/logo/Spotify_Icon_Green_Coated.png',
     tags: ['Next.js', 'tailwind', 'SpotifyAPI'],
     githubUrl: '',
-    webUrl: '',
+    webUrl: 'https://spotify-app-y0303noki.vercel.app/',
     appStoreUrl: '',
     zasetuReason: '',
   };
